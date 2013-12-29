@@ -26,6 +26,9 @@
 		8D23F871186DD66700A7E996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D23F850186DD66600A7E996 /* UIKit.framework */; };
 		8D23F879186DD66700A7E996 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D23F877186DD66700A7E996 /* InfoPlist.strings */; };
 		8D23F87B186DD66700A7E996 /* MioDashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D23F87A186DD66700A7E996 /* MioDashboardTests.m */; };
+		8D94DC30187082DE0066EF5E /* EXTScope.h in Resources */ = {isa = PBXBuildFile; fileRef = 8D94DC2C187082DE0066EF5E /* EXTScope.h */; };
+		8D94DC31187082DE0066EF5E /* EXTScope.m in Resources */ = {isa = PBXBuildFile; fileRef = 8D94DC2D187082DE0066EF5E /* EXTScope.m */; };
+		8D94DC32187082DE0066EF5E /* metamacros.h in Resources */ = {isa = PBXBuildFile; fileRef = 8D94DC2E187082DE0066EF5E /* metamacros.h */; };
 		8DEB7566186DDCC800A7EA42 /* MIORestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB7565186DDCC800A7EA42 /* MIORestHelper.m */; };
 		8DEB7569186E4AD100A7EA42 /* MIOViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB7568186E4AD100A7EA42 /* MIOViewModel.m */; };
 		E395BAD657B448E7A4BE002B /* libPods-MioDashboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D868CA4E454CE6B96F96F5 /* libPods-MioDashboard.a */; };
@@ -69,6 +72,9 @@
 		8D23F876186DD66700A7E996 /* MioDashboardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MioDashboardTests-Info.plist"; sourceTree = "<group>"; };
 		8D23F878186DD66700A7E996 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8D23F87A186DD66700A7E996 /* MioDashboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MioDashboardTests.m; sourceTree = "<group>"; };
+		8D94DC2C187082DE0066EF5E /* EXTScope.h */ = {isa = PBXFileReference; lastKnownFileType = file; path = EXTScope.h; sourceTree = "<group>"; };
+		8D94DC2D187082DE0066EF5E /* EXTScope.m */ = {isa = PBXFileReference; lastKnownFileType = file; path = EXTScope.m; sourceTree = "<group>"; };
+		8D94DC2E187082DE0066EF5E /* metamacros.h */ = {isa = PBXFileReference; lastKnownFileType = file; path = metamacros.h; sourceTree = "<group>"; };
 		8DEB7564186DDCC800A7EA42 /* MIORestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIORestHelper.h; sourceTree = "<group>"; };
 		8DEB7565186DDCC800A7EA42 /* MIORestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIORestHelper.m; sourceTree = "<group>"; };
 		8DEB7567186E4AD100A7EA42 /* MIOViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIOViewModel.h; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 		8D23F840186DD66600A7E996 = {
 			isa = PBXGroup;
 			children = (
+				8D94DC2F187082DE0066EF5E /* libobjc */,
 				8D23F852186DD66600A7E996 /* MioDashboard */,
 				8D23F874186DD66700A7E996 /* MioDashboardTests */,
 				8D23F84B186DD66600A7E996 /* Frameworks */,
@@ -192,6 +199,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8D94DC2F187082DE0066EF5E /* libobjc */ = {
+			isa = PBXGroup;
+			children = (
+				8D94DC2C187082DE0066EF5E /* EXTScope.h */,
+				8D94DC2D187082DE0066EF5E /* EXTScope.m */,
+				8D94DC2E187082DE0066EF5E /* metamacros.h */,
+			);
+			path = libobjc;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -273,6 +290,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D94DC31187082DE0066EF5E /* EXTScope.m in Resources */,
+				8D94DC30187082DE0066EF5E /* EXTScope.h in Resources */,
+				8D94DC32187082DE0066EF5E /* metamacros.h in Resources */,
 				8D23F863186DD66600A7E996 /* Main_iPad.storyboard in Resources */,
 				8D23F868186DD66700A7E996 /* Images.xcassets in Resources */,
 				8D23F860186DD66600A7E996 /* Main_iPhone.storyboard in Resources */,

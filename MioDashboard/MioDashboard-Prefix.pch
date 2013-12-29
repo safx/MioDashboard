@@ -14,7 +14,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
-#import <libextobjc/EXTScope.h>
+#import <EXTScope.h>
 #import <Underscore.h>
 #import <ReactiveCocoa.h>
 #import <TWMessageBarManager.h>

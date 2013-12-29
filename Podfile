@@ -2,7 +2,6 @@
 platform :ios, "7.0"
 
 target "MioDashboard" do
-pod 'libextobjc','0.3'
 pod 'Underscore.m', '~> 0.2.1'
 pod 'Mantle', '~> 1.3.1'
 pod 'ReactiveCocoa', '~> 2.0.0'
@@ -15,7 +14,6 @@ pod 'iOS7Colors', '~> 2.1.0'
 end
 
 target "MioDashboardTests" do
-pod 'libextobjc','0.3'
 pod 'Underscore.m', '~> 0.2.1'
 pod 'Mantle', '~> 1.3.1'
 pod 'ReactiveCocoa', '~> 2.0.0'
