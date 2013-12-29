@@ -10,6 +10,7 @@
 		404476528D4E4B00A375CE11 /* libPods-MioDashboardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E2F7FADB6E4B4FBB24A6DB /* libPods-MioDashboardTests.a */; };
 		8D00C20F186EC48500CFEDAC /* MIODetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D00C20E186EC48500CFEDAC /* MIODetailViewController.m */; };
 		8D00C212186FCF0B00CFEDAC /* MIOHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D00C211186FCF0B00CFEDAC /* MIOHomeViewController.m */; };
+		8D00C250187078F800CFEDAC /* MIOInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D00C24F187078F800CFEDAC /* MIOInformation.m */; };
 		8D23F84D186DD66600A7E996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D23F84C186DD66600A7E996 /* Foundation.framework */; };
 		8D23F84F186DD66600A7E996 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D23F84E186DD66600A7E996 /* CoreGraphics.framework */; };
 		8D23F851186DD66600A7E996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D23F850186DD66600A7E996 /* UIKit.framework */; };
@@ -27,7 +28,6 @@
 		8D23F87B186DD66700A7E996 /* MioDashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D23F87A186DD66700A7E996 /* MioDashboardTests.m */; };
 		8DEB7566186DDCC800A7EA42 /* MIORestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB7565186DDCC800A7EA42 /* MIORestHelper.m */; };
 		8DEB7569186E4AD100A7EA42 /* MIOViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB7568186E4AD100A7EA42 /* MIOViewModel.m */; };
-		8DEB756C186E812D00A7EA42 /* MIOInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB756B186E812D00A7EA42 /* MIOInformation.m */; };
 		E395BAD657B448E7A4BE002B /* libPods-MioDashboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D868CA4E454CE6B96F96F5 /* libPods-MioDashboard.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +47,8 @@
 		8D00C20E186EC48500CFEDAC /* MIODetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIODetailViewController.m; sourceTree = "<group>"; };
 		8D00C210186FCF0B00CFEDAC /* MIOHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIOHomeViewController.h; sourceTree = "<group>"; };
 		8D00C211186FCF0B00CFEDAC /* MIOHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOHomeViewController.m; sourceTree = "<group>"; };
+		8D00C24E187078F800CFEDAC /* MIOInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIOInformation.h; sourceTree = "<group>"; };
+		8D00C24F187078F800CFEDAC /* MIOInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOInformation.m; sourceTree = "<group>"; };
 		8D23F849186DD66600A7E996 /* MioDashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MioDashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D23F84C186DD66600A7E996 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8D23F84E186DD66600A7E996 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,8 +73,6 @@
 		8DEB7565186DDCC800A7EA42 /* MIORestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIORestHelper.m; sourceTree = "<group>"; };
 		8DEB7567186E4AD100A7EA42 /* MIOViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIOViewModel.h; sourceTree = "<group>"; };
 		8DEB7568186E4AD100A7EA42 /* MIOViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOViewModel.m; sourceTree = "<group>"; };
-		8DEB756A186E812D00A7EA42 /* MIOInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIOInformation.h; path = ../MIOInformation.h; sourceTree = "<group>"; };
-		8DEB756B186E812D00A7EA42 /* MIOInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIOInformation.m; path = ../MIOInformation.m; sourceTree = "<group>"; };
 		A1A6944940984437B4F0FCE8 /* Pods-MioDashboardTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioDashboardTests.xcconfig"; path = "Pods/Pods-MioDashboardTests.xcconfig"; sourceTree = "<group>"; };
 		C4D868CA4E454CE6B96F96F5 /* libPods-MioDashboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MioDashboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E2F7FADB6E4B4FBB24A6DB /* libPods-MioDashboardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MioDashboardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +141,8 @@
 		8D23F852186DD66600A7E996 /* MioDashboard */ = {
 			isa = PBXGroup;
 			children = (
+				8D00C24E187078F800CFEDAC /* MIOInformation.h */,
+				8D00C24F187078F800CFEDAC /* MIOInformation.m */,
 				8D23F85B186DD66600A7E996 /* MIOAppDelegate.h */,
 				8D23F85C186DD66600A7E996 /* MIOAppDelegate.m */,
 				8DEB7567186E4AD100A7EA42 /* MIOViewModel.h */,
@@ -153,8 +155,6 @@
 				8D00C20E186EC48500CFEDAC /* MIODetailViewController.m */,
 				8DEB7564186DDCC800A7EA42 /* MIORestHelper.h */,
 				8DEB7565186DDCC800A7EA42 /* MIORestHelper.m */,
-				8DEB756A186E812D00A7EA42 /* MIOInformation.h */,
-				8DEB756B186E812D00A7EA42 /* MIOInformation.m */,
 				8D23F867186DD66700A7E996 /* Images.xcassets */,
 				8D23F853186DD66600A7E996 /* Supporting Files */,
 			);
@@ -360,11 +360,11 @@
 			files = (
 				8D23F866186DD66700A7E996 /* MIOSummaryViewController.m in Sources */,
 				8DEB7569186E4AD100A7EA42 /* MIOViewModel.m in Sources */,
-				8DEB756C186E812D00A7EA42 /* MIOInformation.m in Sources */,
 				8D00C212186FCF0B00CFEDAC /* MIOHomeViewController.m in Sources */,
 				8DEB7566186DDCC800A7EA42 /* MIORestHelper.m in Sources */,
 				8D23F85D186DD66600A7E996 /* MIOAppDelegate.m in Sources */,
 				8D23F859186DD66600A7E996 /* main.m in Sources */,
+				8D00C250187078F800CFEDAC /* MIOInformation.m in Sources */,
 				8D00C20F186EC48500CFEDAC /* MIODetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
