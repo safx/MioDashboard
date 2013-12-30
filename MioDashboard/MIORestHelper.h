@@ -17,6 +17,8 @@
 @property NSString* redirectURI;
 @property NSString* state;
 
++ (MIORestHelper*)sharedInstance;
+
 - (RACSignal*)authorize;
 - (RACSignal*)authorizeInView:(UIView*)view;
 

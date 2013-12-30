@@ -24,12 +24,7 @@
     self = [super init];
     if (self) {
         // init properties
-        self.restHelper = [self loadAccessToken];
-        if (!self.restHelper) {
-            self.restHelper = MIORestHelper.alloc.init;
-            self.restHelper.clientID = @"<Your CliendID>";
-            self.restHelper.redirectURI = @"<Your Redirect URI>";
-        }
+        self.restHelper = MIORestHelper.sharedInstance;
         self.restHelper.state = NSDate.date.description;
         
         self.info = MIOInformation.sharedInstance;
@@ -211,18 +206,17 @@
 }
 
 - (void)loadInformation {
-    if (!self.restHelper.accessToken) {
+    if (self.restHelper.accessToken) {
+        [self loadInformation_impl];
+    } else {
         @weakify(self);
         [[[self.restHelper authorize] catch:^RACSignal *(NSError *error) {
             @strongify(self);
             [self showErrorMessageForRestAPI:error];
         }] subscribeCompleted:^{
             @strongify(self);
-            [self saveAccessToken];
             [self loadInformation_impl];
         }];
-    } else {
-        [self loadInformation_impl];
     }
 }
 
@@ -245,31 +239,6 @@
         NSAssert([dic[@"returnCode"] isEqualToString:@"OK"], @"returnCode should be OK");
         self.couponUse = couponUse;
     }];
-}
-
-#pragma mark - serialization
-
-- (NSString*)serverPath {
-    NSString* home = NSHomeDirectory();
-    return [home stringByAppendingPathComponent:@"iij.json"];
-}
-
-- (void)saveAccessToken {
-    NSError* error = nil;
-    NSDictionary* dic = [MTLJSONAdapter JSONDictionaryFromModel:self.restHelper];
-    NSData* data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
-    if (!error) {
-        [data writeToFile:self.serverPath atomically:YES];
-    }
-}
-
-- (MIORestHelper*)loadAccessToken {
-    NSError* error = nil;
-    NSData* data = [NSData dataWithContentsOfFile:self.serverPath options:0 error:&error];
-    if (error) return nil;
-    NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    if (error) return nil;
-    return [MTLJSONAdapter modelOfClass:MIORestHelper.class fromJSONDictionary:dic error:&error];
 }
 
 @end

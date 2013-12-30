@@ -25,6 +25,47 @@
     };
 }
 
++ (MIORestHelper*)sharedInstance {
+    __block MIORestHelper* instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [self loadAccessToken];
+        if (!instance) {
+            instance = MIORestHelper.alloc.init;
+            instance.clientID = @"<Your CliendID>";
+            instance.redirectURI = @"<Your Redirect URI>";
+        }
+    });
+    return instance;
+}
+
+#pragma mark - serialization
+
++ (NSString*)serverPath {
+    NSString* home = NSHomeDirectory();
+    return [home stringByAppendingPathComponent:@"Library/Caches/iij.json"];
+}
+
++ (void)saveAccessToken:(MIORestHelper*)instance {
+    NSError* error = nil;
+    NSDictionary* dic = [MTLJSONAdapter JSONDictionaryFromModel:instance];
+    NSData* data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&error];
+    if (!error) {
+        [data writeToFile:self.serverPath atomically:YES];
+    }
+}
+
++ (MIORestHelper*)loadAccessToken {
+    NSError* error = nil;
+    NSData* data = [NSData dataWithContentsOfFile:self.serverPath options:0 error:&error];
+    if (error) return nil;
+    NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    if (error) return nil;
+    return [MTLJSONAdapter modelOfClass:MIORestHelper.class fromJSONDictionary:dic error:&error];
+}
+
+#pragma mark - helper funcs
+
 - (BOOL)checkAccessToken:(NSURLRequest*)request {
     NSDictionary* params = Underscore.array([request.URL.fragment componentsSeparatedByString:@"&"]).reduce(@{}, ^(NSDictionary* a, NSString* str) {
         NSArray* kv = [str componentsSeparatedByString:@"="];
@@ -33,6 +74,7 @@
     NSString* state = [self.state stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];
     if ([state isEqualToString:params[@"state"]]) {
         self.accessToken = params[@"access_token"];
+        [MIORestHelper saveAccessToken:self];
         return TRUE;
     }
     return FALSE;
@@ -91,7 +133,7 @@
 }
 
     
-#pragma mark - iijmio
+#pragma mark - IIJMio REST API
 
 - (NSMutableURLRequest*)apiRequestWithURLString:(NSString*)urlString {
     NSAssert(_clientID && _accessToken, @"should be non-nil");
