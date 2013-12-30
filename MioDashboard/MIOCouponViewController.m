@@ -72,7 +72,8 @@
 }
 
 - (UIColor *)pieChart:(XYPieChart *)pieChart colorForSliceAtIndex:(NSUInteger)index {
-    return index == 0? UIColor.redColor : nil;
+    NSDictionary* dic = self.viewModel.slices[index];
+    return [dic[@"type"] isEqualToString:@"used"]? UIColor.redColor : nil;
 }
 
 #pragma mark - XYPieChartDelegate

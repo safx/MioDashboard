@@ -21,7 +21,6 @@
         NSArray* coupons = Underscore.array(couponInfo.coupon).filter(^BOOL(MIOCoupon* e) {
             return e.volume > 0;
         }).map(^id(MIOCoupon* e) {
-            //return @{@"label":e[@"expire"], @"value":@([e[@"volume"] intValue])};
             NSString* expire = e.expire;
             NSString* y = [expire substringWithRange:NSMakeRange(0, 4)];
             NSString* m = [expire substringWithRange:NSMakeRange(4, 2)];
@@ -33,7 +32,7 @@
             int sum = [Underscore.array(hdoInfo.packetLog).reduce(@0, ^id(NSNumber* v, MIOPacketLog* e) {
                 return @(v.intValue + e.withCoupon);
             }) intValue];
-            return @[@{@"label":hdoInfo.hdoServiceCode, @"type":@"", @"volume":@(sum)}];
+            return @[@{@"label":hdoInfo.hdoServiceCode, @"type":@"used", @"volume":@(sum)}];
         }).unwrap;
         
         self.slices = Underscore.array(@[usages, coupons]).flatten.unwrap;
