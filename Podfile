@@ -9,8 +9,6 @@ pod 'AFNetworking-RACExtensions', '~> 0.1.2'
 pod 'XYPieChart', '~> 0.2'
 pod 'iOSPlot', '~> 1.0.1'
 pod 'TWMessageBarManager', '~> 1.3.0'
-pod 'ionicons', '~> 1.0'
-pod 'iOS7Colors', '~> 2.1.0'
 end
 
 target "MioDashboardTests" do
@@ -21,7 +19,5 @@ pod 'AFNetworking-RACExtensions', '~> 0.1.2'
 pod 'XYPieChart', '~> 0.2'
 pod 'iOSPlot', '~> 1.0.1'
 pod 'TWMessageBarManager', '~> 1.3.0'
-pod 'ionicons', '~> 1.0'
-pod 'iOS7Colors', '~> 2.1.0'
 end
 

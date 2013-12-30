@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Mantle.h>
 
-@class MIOInformation;
+@class MIOResponseCache;
 
 @interface MIORestHelper : MTLModel<MTLJSONSerializing>
 @property NSString* accessToken;

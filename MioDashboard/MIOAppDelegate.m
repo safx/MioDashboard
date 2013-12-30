@@ -7,22 +7,14 @@
 //
 
 #import "MIOAppDelegate.h"
-#import "MIOSummaryViewController.h"
+#import "MIOCouponViewController.h"
+#import "MIORestHelper.h"
 
 @implementation MIOAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    UITabBarController* tabbarController = (UITabBarController*) self.window.rootViewController;
-    NSArray* items = tabbarController.tabBar.items;
-    void(^setImage)(UITabBarItem*,NSString*) = ^(UITabBarItem* item, NSString* label) {
-        item.image = [IonIcons imageWithIcon:label size:30.0f color:UIColor.iOS7lightGrayColor];
-        item.selectedImage = [IonIcons imageWithIcon:label size:30.0f color:UIColor.iOS7darkBlueColor];
-    };
-    setImage(items[0], icon_home);
-    setImage(items[1], icon_pie_graph);
-    setImage(items[2], icon_stats_bars);
     return YES;
 }
 							

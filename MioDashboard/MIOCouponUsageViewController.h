@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @class PNLineChart;
-@interface MIODetailViewController : UIViewController
+@class MIOPacketHdoInfo;
+
+@interface MIOCouponUsageViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+- (void)setModelWithpacketHdoInfo:(MIOPacketHdoInfo*)packetHdoInfo;
 @end

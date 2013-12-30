@@ -17,7 +17,4 @@
 #import <EXTScope.h>
 #import <Underscore.h>
 #import <ReactiveCocoa.h>
-#import <TWMessageBarManager.h>
-#import <IonIcons.h>
-#import "UIColor+iOS7Colors.h"
 #endif

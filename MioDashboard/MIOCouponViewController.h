@@ -9,10 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @class XYPieChart;
+@class MIOCouponInfo;
+@class MIOPacketLogInfo;
 
-@interface MIOSummaryViewController : UIViewController
+
+@interface MIOCouponViewController : UIViewController
 @property (weak, nonatomic) IBOutlet XYPieChart *pieChartView;
 @property (weak, nonatomic) IBOutlet UILabel *volumeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *unitLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+
+- (void)setModelWithCouponInfo:(MIOCouponInfo*)couponInfo packetLogInfo:(MIOPacketLogInfo*)packetLogInfo;
 @end

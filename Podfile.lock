@@ -3,8 +3,6 @@ PODS:
   - AFNetworking-RACExtensions (0.1.2):
     - AFNetworking (~> 1.0)
     - ReactiveCocoa (= 2.0)
-  - ionicons (1.0)
-  - iOS7Colors (2.1.0)
   - iOSPlot (1.0.1)
   - Mantle (1.3.1):
     - Mantle/extobjc
@@ -24,8 +22,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking-RACExtensions (~> 0.1.2)
-  - ionicons (~> 1.0)
-  - iOS7Colors (~> 2.1.0)
   - iOSPlot (~> 1.0.1)
   - Mantle (~> 1.3.1)
   - ReactiveCocoa (~> 2.0.0)
@@ -36,8 +32,6 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
   AFNetworking-RACExtensions: b7d01ef9969feaff48e5b8864958cbcf3c7370ec
-  ionicons: 4883685aaf933bd542cc43f739a10759a1f62899
-  iOS7Colors: bde8733c6cb28db1065875dcff38667090f58779
   iOSPlot: 7cf7d52c430dc19db5271a6607ef1545093446c2
   Mantle: abc3b0c81bc66eb624cf9cebb8640e377d5a44ae
   ReactiveCocoa: 04f49b91365cc946e7ca327bcfb5765fcea69e76

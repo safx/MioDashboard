@@ -7,18 +7,20 @@
 //
 
 #import <XYPieChart.h>
-#import "MIOSummaryViewController.h"
-#import "MIOViewModel.h"
+#import "MIOResponse.h"
+#import "MIOCouponViewController.h"
+#import "MIOCouponViewModel.h"
 
-@interface MIOSummaryViewController () <XYPieChartDataSource, XYPieChartDelegate>
-@property MIOViewModel* viewModel;
+@interface MIOCouponViewController () <XYPieChartDataSource, XYPieChartDelegate>
+@property MIOCouponViewModel* viewModel;
 @end
 
-@implementation MIOSummaryViewController
+@implementation MIOCouponViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view, typically from a nib.
     self.pieChartView.delegate = self;
     self.pieChartView.dataSource = self;
@@ -29,8 +31,6 @@
     
     self.volumeLabel.layer.cornerRadius = 70;
 
-    self.viewModel = MIOViewModel.alloc.init;
-    
     @weakify(self);
     [RACObserve(self, viewModel.slices) subscribeNext:^(id x) {
         @strongify(self);
@@ -87,6 +87,13 @@
 }
 - (void)pieChart:(XYPieChart *)pieChart didDeselectSliceAtIndex:(NSUInteger)index {
     self.detailLabel.text = @"";
+}
+
+#pragma mark -
+
+- (void)setModelWithCouponInfo:(MIOCouponInfo*)couponInfo packetLogInfo:(MIOPacketLogInfo*)packetLogInfo {
+    self.title = couponInfo.hddServiceCode;
+    self.viewModel = [[MIOCouponViewModel alloc] initWithCouponInfo:couponInfo packetLogInfo:packetLogInfo];
 }
 
 @end

@@ -102,7 +102,7 @@
         <scene sceneID="Aml-s0-faF">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="O8K-WL-TIW" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Gii-Lt-A94">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="-4733" y="1132"/>
         </scene>
-        <!--Detail View Controller - Detail-->
+        <!--Coupon Usage View Controller - Detail-->
         <scene sceneID="FG1-MX-joo">
             <objects>
-                <viewController id="ZwZ-QL-dut" customClass="MIODetailViewController" sceneMemberID="viewController">
+                <viewController id="ZwZ-QL-dut" customClass="MIOCouponUsageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hjJ-Vw-uYT"/>
                         <viewControllerLayoutGuide type="bottom" id="9jb-LW-u7J"/>
@@ -146,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="-4739" y="2262"/>
         </scene>
-        <!--Summary View Controller - Summary-->
+        <!--Coupon View Controller - Summary-->
         <scene sceneID="Qpk-RL-R2d">
             <objects>
-                <viewController id="ZEB-RT-P9u" customClass="MIOSummaryViewController" sceneMemberID="viewController">
+                <viewController id="ZEB-RT-P9u" customClass="MIOCouponViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a6r-4j-ndh"/>
                         <viewControllerLayoutGuide type="bottom" id="bEg-fJ-RRt"/>

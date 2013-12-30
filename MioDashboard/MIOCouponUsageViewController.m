@@ -6,22 +6,22 @@
 //  Copyright (c) 2013年 Safx Developers. All rights reserved.
 //
 
-#import "MIODetailViewController.h"
-#import "MIOViewModel.h"
+#import "MIOResponse.h"
+#import "MIOCouponUsageViewController.h"
+#import "MIOCouponUsageViewModel.h"
 #import <iOSPlot/PCLineChartView.h>
 
-@interface MIODetailViewController ()
+@interface MIOCouponUsageViewController ()
 @property PCLineChartView *lineChartView;
-@property MIOViewModel* viewModel;
+@property MIOCouponUsageViewModel* viewModel;
 @end
 
-@implementation MIODetailViewController
+@implementation MIOCouponUsageViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.viewModel = MIOViewModel.alloc.init;
     
     self.lineChartView = [[PCLineChartView alloc] initWithFrame:CGRectMake(0,0, 900, 250)];
     self.lineChartView.autoscaleYAxis = TRUE;
@@ -39,6 +39,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setModelWithpacketHdoInfo:(MIOPacketHdoInfo*)packetHdoInfo {
+    self.title = packetHdoInfo.hdoServiceCode;
+    self.viewModel = [[MIOCouponUsageViewModel alloc] initWithPacketHdoInfo:packetHdoInfo];
 }
 
 @end
