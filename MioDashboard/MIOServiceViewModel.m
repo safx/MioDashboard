@@ -16,6 +16,7 @@
 @property MIOResponseCache* info;
 @end
 
+typedef id(^RACSignalErrorBlock)(NSError*);
 
 @implementation MIOServiceViewModel
 
@@ -27,53 +28,52 @@
         self.restHelper = MIORestHelper.sharedInstance;
         self.restHelper.state = NSDate.date.description;
         
-        [self loadInformation];
-    }
-    return self;
-}
-
-- (void)loadInformation_impl {
-#if 1
-    @weakify(self);
-    id(^errorBlock)(NSError*) = ^(NSError* error) {
-        @strongify(self);
-
-        NSString* t = error.localizedRecoverySuggestion;
-        NSError* err = nil;
-        NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:[t dataUsingEncoding:NSASCIIStringEncoding]  options:0 error:&err];
-        if (!err && dic[@"returnCode"]) {
-            if ([dic[@"returnCode"] isEqualToString:@"User Authorization Failure"]) {
-                if (self.restHelper.accessToken) {
-                    self.restHelper.accessToken = nil;
-                    [self loadInformation];
-                }
-            }
-        } else {
-            [self showErrorMessageForRestAPI:error];
-        }
-        return [RACSignal empty];
-    };
-    
-    typedef id (^MapReturnBlock)(id value);
-    MapReturnBlock(^createObject)(Class) = ^(Class clazz) {
-        return ^id(RACTuple* tuple) {
-            NSDictionary* dic = tuple.first;
+        @weakify(self);
+        id(^createObject)(Class,NSDictionary*) = ^id(Class clazz, NSDictionary* dic) {
+            @strongify(self);
             NSError* error = nil;
             id obj = [MTLJSONAdapter modelOfClass:clazz fromJSONDictionary:dic error:&error];
             if (error) {
-                @strongify(self);
                 [self showErrorMessageForRestAPI:error];
-                return [RACSignal empty];
+                return nil;
             } else {
                 return obj;
             }
         };
-    };
-    
-    RAC(self, couponResponse) = [[[self.restHelper getCoupon] catch:errorBlock] map:createObject(MIOCouponResponse.class)];
-    RAC(self, packetResponse) = [[[self.restHelper getPacket] catch:errorBlock] map:createObject(MIOPacketResponse.class)];
-    
-#else
+        
+        id(^errorBlock)(NSError*) = ^(NSError* error) {
+            @strongify(self);
+            
+            NSString* t = error.localizedRecoverySuggestion;
+            NSError* err = nil;
+            NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:[t dataUsingEncoding:NSASCIIStringEncoding] options:0 error:&err];
+            if (!err && dic[@"returnCode"]) {
+                if ([dic[@"returnCode"] isEqualToString:@"User Authorization Failure"]) {
+                    // Access toekn maybe expired, so we retry...
+                    if (self.restHelper.accessToken) {
+                        self.restHelper.accessToken = nil;
+                        return [[self loadInformation] catch:^RACSignal *(NSError *error) {
+                            [self showErrorMessageForRestAPI:error];
+                            return [RACSignal empty];
+                        }];
+                    }
+                }
+            } else {
+                [self showErrorMessageForRestAPI:error];
+            }
+            return [RACSignal empty];
+        };
+        
+        [[[self loadInformation] catch:errorBlock] subscribeNext:^(NSArray* array) {
+            @strongify(self);
+            self.couponResponse = createObject(MIOCouponResponse.class, [array[0] first]);
+            self.packetResponse = createObject(MIOPacketResponse.class, [array[1] first]);
+        }];
+    }
+    return self;
+}
+
+- (void)loadInformation_forText {
     NSDictionary* cr =
     @{
       @"returnCode": @"OK",
@@ -179,7 +179,15 @@
     NSError* error = nil;
     self.couponResponse = [MTLJSONAdapter modelOfClass:MIOCouponResponse.class fromJSONDictionary:cr error:&error];
     self.packetResponse = [MTLJSONAdapter modelOfClass:MIOPacketResponse.class fromJSONDictionary:pr error:&error];
-#endif
+}
+
+- (RACSignalErrorBlock)errorBlock {
+    @weakify(self);
+    return ^(NSError* error) {
+        @strongify(self);
+        [self showErrorMessageForRestAPI:error];
+        return [RACSignal empty];
+    };
 }
 
 - (void)showErrorMessageForRestAPI:(NSError*)error {
@@ -193,35 +201,18 @@
                                                           type:TWMessageBarMessageTypeError];
 }
 
-- (void)loadInformation {
-    if (self.restHelper.accessToken) {
-        [self loadInformation_impl];
-    } else {
-        @weakify(self);
-        [[[self.restHelper authorize] catch:^RACSignal *(NSError *error) {
-            @strongify(self);
-            [self showErrorMessageForRestAPI:error];
-            return [RACSignal empty];
-        }] subscribeCompleted:^{
-            @strongify(self);
-            [self loadInformation_impl];
-        }];
-    }
+- (RACSignal*)loadInformation {
+    RACSignal* coupon = [RACSignal defer:^RACSignal* { return [self.restHelper getCoupon]; }];
+    RACSignal* packet = [RACSignal defer:^RACSignal* { return [self.restHelper getPacket]; }];
+    
+    RACSignal* sig = [[coupon concat:packet] collect];
+    return self.restHelper.accessToken? sig : [[[self.restHelper authorize] catch:self.errorBlock] concat:sig];
 }
 
 - (void)changeCouponUse:(BOOL)couponUse forHdoInfo:(MIOCouponHdoInfo*)hdoInfo {
     if (hdoInfo.couponUse == couponUse) return;
     
-    @weakify(self);
-    id(^errorBlock)(NSError*) = ^(NSError* error) {
-        @strongify(self);
-        hdoInfo.couponUse = !couponUse;
-        [self showErrorMessageForRestAPI:error];
-        return [RACSignal empty];
-    };
-    
-    [[[self.restHelper putCoupon:couponUse forHdoServiceCode:hdoInfo.hdoServiceCode] catch:errorBlock] subscribeNext:^(RACTuple* tuple) {
-        @strongify(self);
+    [[[self.restHelper putCoupon:couponUse forHdoServiceCode:hdoInfo.hdoServiceCode] catch:self.errorBlock] subscribeNext:^(RACTuple* tuple) {
         NSDictionary* dic = tuple.first;
         NSAssert([dic[@"returnCode"] isEqualToString:@"OK"], @"returnCode should be OK");
         hdoInfo.couponUse = couponUse;
