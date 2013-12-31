@@ -27,47 +27,9 @@ typedef id(^RACSignalErrorBlock)(NSError*);
         // init properties
         self.restHelper = MIORestHelper.sharedInstance;
         self.restHelper.state = NSDate.date.description;
-        
-        @weakify(self);
-        id(^createObject)(Class,NSDictionary*) = ^id(Class clazz, NSDictionary* dic) {
-            @strongify(self);
-            NSError* error = nil;
-            id obj = [MTLJSONAdapter modelOfClass:clazz fromJSONDictionary:dic error:&error];
-            if (error) {
-                [self showErrorMessageForRestAPI:error];
-                return nil;
-            } else {
-                return obj;
-            }
-        };
-        
-        id(^errorBlock)(NSError*) = ^(NSError* error) {
-            @strongify(self);
-            
-            NSString* t = error.localizedRecoverySuggestion;
-            NSError* err = nil;
-            NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:[t dataUsingEncoding:NSASCIIStringEncoding] options:0 error:&err];
-            if (!err && dic[@"returnCode"]) {
-                if ([dic[@"returnCode"] isEqualToString:@"User Authorization Failure"]) {
-                    // Access toekn maybe expired, so we retry...
-                    if (self.restHelper.accessToken) {
-                        self.restHelper.accessToken = nil;
-                        return [[self loadInformation] catch:^RACSignal *(NSError *error) {
-                            [self showErrorMessageForRestAPI:error];
-                            return [RACSignal empty];
-                        }];
-                    }
-                }
-            } else {
-                [self showErrorMessageForRestAPI:error];
-            }
-            return [RACSignal empty];
-        };
-        
-        [[[self loadInformation] catch:errorBlock] subscribeNext:^(NSArray* array) {
-            @strongify(self);
-            self.couponResponse = createObject(MIOCouponResponse.class, [array[0] first]);
-            self.packetResponse = createObject(MIOPacketResponse.class, [array[1] first]);
+
+        [[self loadInformation] subscribeCompleted:^{
+
         }];
     }
     return self;
@@ -201,12 +163,57 @@ typedef id(^RACSignalErrorBlock)(NSError*);
                                                           type:TWMessageBarMessageTypeError];
 }
 
-- (RACSignal*)loadInformation {
+- (RACSignal*)loadInformationSignal {
     RACSignal* coupon = [RACSignal defer:^RACSignal* { return [self.restHelper getCoupon]; }];
     RACSignal* packet = [RACSignal defer:^RACSignal* { return [self.restHelper getPacket]; }];
     
     RACSignal* sig = [[coupon concat:packet] collect];
     return self.restHelper.accessToken? sig : [[[self.restHelper authorize] catch:self.errorBlock] concat:sig];
+}
+
+- (RACSignal*)loadInformation {
+    @weakify(self);
+    id(^createObject)(Class,NSDictionary*) = ^id(Class clazz, NSDictionary* dic) {
+        @strongify(self);
+        NSError* error = nil;
+        id obj = [MTLJSONAdapter modelOfClass:clazz fromJSONDictionary:dic error:&error];
+        if (error) {
+            [self showErrorMessageForRestAPI:error];
+            return nil;
+        } else {
+            return obj;
+        }
+    };
+    
+    id(^errorBlock)(NSError*) = ^(NSError* error) {
+        @strongify(self);
+        
+        NSString* t = error.localizedRecoverySuggestion;
+        NSError* err = nil;
+        NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:[t dataUsingEncoding:NSASCIIStringEncoding] options:0 error:&err];
+        if (!err && dic[@"returnCode"]) {
+            if ([dic[@"returnCode"] isEqualToString:@"User Authorization Failure"]) {
+                // Access toekn maybe expired, so we retry...
+                if (self.restHelper.accessToken) {
+                    self.restHelper.accessToken = nil;
+                    return [[self loadInformationSignal] catch:^RACSignal *(NSError *error) {
+                        [self showErrorMessageForRestAPI:error];
+                        return [RACSignal empty];
+                    }];
+                }
+            }
+        } else {
+            [self showErrorMessageForRestAPI:error];
+        }
+        return [RACSignal empty];
+    };
+    
+    return [[[self loadInformationSignal] catch:errorBlock] map:^(NSArray* array) {
+        @strongify(self);
+        self.couponResponse = createObject(MIOCouponResponse.class, [array[0] first]);
+        self.packetResponse = createObject(MIOPacketResponse.class, [array[1] first]);
+        return array;
+    }];
 }
 
 - (void)changeCouponUse:(BOOL)couponUse forHdoInfo:(MIOCouponHdoInfo*)hdoInfo {

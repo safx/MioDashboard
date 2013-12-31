@@ -14,5 +14,6 @@
 @interface MIOServiceViewModel : NSObject
 @property MIOCouponResponse* couponResponse;
 @property MIOPacketResponse* packetResponse;
+- (RACSignal*)loadInformation;
 - (void)changeCouponUse:(BOOL)couponUse forHdoInfo:(MIOCouponHdoInfo*)hdoInfo;
 @end

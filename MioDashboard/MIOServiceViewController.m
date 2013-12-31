@@ -34,6 +34,15 @@
         @strongify(self);
         [self.tableView reloadData];
     }];
+    
+    [[self.infoRefreshControl rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(id x) {
+        @strongify(self);
+        [[[self.viewModel loadInformation] finally:^{
+            [self.infoRefreshControl endRefreshing];
+        }] subscribeCompleted:^{
+            
+        }];
+    }];
 }
 
 - (void)didReceiveMemoryWarning

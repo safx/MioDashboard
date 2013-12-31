@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MIOServiceViewController : UITableViewController
-
+@property (weak, nonatomic) IBOutlet UIRefreshControl *infoRefreshControl;
 @end

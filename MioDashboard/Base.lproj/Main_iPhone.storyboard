@@ -243,6 +243,12 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="IIJMio Dashboard" id="GAh-Fc-ubj"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="DBu-uQ-SP4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                    <connections>
+                        <outlet property="infoRefreshControl" destination="DBu-uQ-SP4" id="zRp-8e-R1X"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d38-Nh-1dc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
