@@ -106,99 +106,96 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hdoServiceCode" rowHeight="280" id="8jy-8h-0JM" customClass="MIOHdoServiceCodeCell">
-                                <rect key="frame" x="0.0" y="119" width="320" height="280"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="2" indentationWidth="0.0" reuseIdentifier="Coupon" id="hAx-Dt-ofV" customClass="MIOCouponCell">
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8jy-8h-0JM" id="kuJ-Q9-w5S">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="279"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hAx-Dt-ofV" id="b2v-a3-6sR">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="hdo80000000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAZ-DC-jeu">
-                                            <rect key="frame" x="165" y="12" width="135" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coupon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHo-c7-V1z">
+                                            <rect key="frame" x="20" y="11" width="137" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="300 MB" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uba-sd-a0a">
+                                            <rect key="frame" x="147" y="11" width="135" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYO-av-3U9">
-                                            <rect key="frame" x="20" y="56" width="137" height="21"/>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Uba-sd-a0a" secondAttribute="trailing" constant="5" id="2m4-sZ-EJz"/>
+                                        <constraint firstAttribute="trailing" secondItem="Uba-sd-a0a" secondAttribute="trailing" constant="5" id="jPx-xP-hPk"/>
+                                        <constraint firstItem="Uba-sd-a0a" firstAttribute="top" secondItem="b2v-a3-6sR" secondAttribute="top" constant="11" id="p5a-Ck-HqH"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="couponLabel" destination="Uba-sd-a0a" id="Mhy-kh-etM"/>
+                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="coupon" id="jNO-EF-LZY"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hdoServiceCode" rowHeight="105" id="8jy-8h-0JM" customClass="MIOHdoServiceCodeCell">
+                                <rect key="frame" x="0.0" y="163" width="320" height="105"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8jy-8h-0JM" id="kuJ-Q9-w5S">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="104"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="GD0xxxxxxxxxxxx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAZ-DC-jeu" userLabel="IccId">
+                                            <rect key="frame" x="20" y="44" width="135" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Service Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7af-TF-cdm">
-                                            <rect key="frame" x="20" y="12" width="137" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="00000000000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siA-BY-ZXV">
-                                            <rect key="frame" x="165" y="56" width="135" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Regulation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7t-A3-7XE">
-                                            <rect key="frame" x="20" y="99" width="137" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000-0000-0000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siA-BY-ZXV" userLabel="Number">
+                                            <rect key="frame" x="20" y="16" width="119" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SMS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ps9-HV-ZTa">
-                                            <rect key="frame" x="20" y="144" width="137" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SMS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h1-jD-K42" userLabel="SMS">
+                                            <rect key="frame" x="163" y="44" width="48" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coupon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEa-41-Ykh">
-                                            <rect key="frame" x="20" y="188" width="137" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="No" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h1-jD-K42">
-                                            <rect key="frame" x="165" y="144" width="135" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Yes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZT-Py-bga">
-                                            <rect key="frame" x="165" y="99" width="135" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Regulated" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZT-Py-bga" userLabel="Regulation">
+                                            <rect key="frame" x="235" y="44" width="80" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xwf-hS-eEY">
-                                            <rect key="frame" x="251" y="183" width="51" height="31"/>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xwf-hS-eEY">
+                                            <rect key="frame" x="251" y="11" width="51" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>
                                                 <action selector="onCouponSwitchTouched:" destination="8jy-8h-0JM" eventType="touchUpInside" id="wFe-zm-e7I"/>
                                             </connections>
                                         </switch>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Used" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpx-F6-V1T">
-                                            <rect key="frame" x="42" y="238" width="137" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="120 MB" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMt-uC-NM8">
-                                            <rect key="frame" x="147" y="238" width="135" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpx-F6-V1T">
+                                            <rect key="frame" x="20" y="73" width="50" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1Q-kp-xMI">
-                                            <rect key="frame" x="285" y="234" width="30" height="30"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="120 MB" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMt-uC-NM8">
+                                            <rect key="frame" x="200" y="73" width="82" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1Q-kp-xMI">
+                                            <rect key="frame" x="286" y="69" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="tsN-LI-bbT"/>
@@ -214,53 +211,33 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="KAZ-DC-jeu" secondAttribute="trailing" constant="20" id="0nO-Iw-fAg"/>
-                                        <constraint firstAttribute="trailing" secondItem="1h1-jD-K42" secondAttribute="trailing" constant="20" id="10X-Ns-rr0"/>
                                         <constraint firstAttribute="trailing" secondItem="V1Q-kp-xMI" secondAttribute="trailing" constant="5" id="279-ea-YhD"/>
-                                        <constraint firstItem="V1Q-kp-xMI" firstAttribute="leading" secondItem="GMt-uC-NM8" secondAttribute="trailing" constant="3" id="ACH-cQ-XIf"/>
+                                        <constraint firstItem="siA-BY-ZXV" firstAttribute="leading" secondItem="kuJ-Q9-w5S" secondAttribute="leading" constant="20" id="4zK-Lm-k8e"/>
+                                        <constraint firstItem="KAZ-DC-jeu" firstAttribute="top" secondItem="siA-BY-ZXV" secondAttribute="bottom" constant="7" id="7JS-BZ-NS4"/>
+                                        <constraint firstItem="jpx-F6-V1T" firstAttribute="leading" secondItem="kuJ-Q9-w5S" secondAttribute="leading" constant="20" id="8fH-qz-iQj"/>
+                                        <constraint firstItem="V1Q-kp-xMI" firstAttribute="leading" secondItem="GMt-uC-NM8" secondAttribute="trailing" constant="8" id="ACH-cQ-XIf"/>
+                                        <constraint firstItem="1h1-jD-K42" firstAttribute="top" secondItem="kuJ-Q9-w5S" secondAttribute="top" constant="16" id="IMl-Bo-ctu"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jpx-F6-V1T" secondAttribute="bottom" constant="5" id="LDc-pX-1x4"/>
                                         <constraint firstAttribute="trailing" secondItem="gZT-Py-bga" secondAttribute="trailing" constant="20" id="Nge-GF-mqj"/>
                                         <constraint firstAttribute="trailing" secondItem="xwf-hS-eEY" secondAttribute="trailing" constant="20" id="Rjp-Vd-Q4Z"/>
-                                        <constraint firstAttribute="trailing" secondItem="siA-BY-ZXV" secondAttribute="trailing" constant="20" id="qUg-su-N5j"/>
+                                        <constraint firstItem="gZT-Py-bga" firstAttribute="top" secondItem="xwf-hS-eEY" secondAttribute="bottom" constant="2" id="Td3-x7-j7V"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gZT-Py-bga" secondAttribute="trailing" constant="5" id="Ylb-xi-YEj"/>
+                                        <constraint firstItem="xwf-hS-eEY" firstAttribute="leading" secondItem="1h1-jD-K42" secondAttribute="trailing" constant="40" id="YzM-Dv-vqC"/>
+                                        <constraint firstAttribute="bottom" secondItem="jpx-F6-V1T" secondAttribute="bottom" constant="10" id="f6p-hD-Omq"/>
+                                        <constraint firstItem="xwf-hS-eEY" firstAttribute="top" secondItem="kuJ-Q9-w5S" secondAttribute="top" constant="11" id="fmn-El-7kz"/>
+                                        <constraint firstItem="siA-BY-ZXV" firstAttribute="top" secondItem="kuJ-Q9-w5S" secondAttribute="top" constant="16" id="qh8-yb-417"/>
+                                        <constraint firstAttribute="bottom" secondItem="GMt-uC-NM8" secondAttribute="bottom" constant="10" id="vIy-0N-68Z"/>
+                                        <constraint firstAttribute="bottom" secondItem="V1Q-kp-xMI" secondAttribute="bottom" constant="5" id="wkt-rT-ULi"/>
+                                        <constraint firstItem="KAZ-DC-jeu" firstAttribute="leading" secondItem="kuJ-Q9-w5S" secondAttribute="leading" constant="20" id="zp4-Eq-Ayh"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="couponSwitch" destination="xwf-hS-eEY" id="Tin-08-bhu"/>
                                     <outlet property="couponUsedLabel" destination="GMt-uC-NM8" id="hg1-qz-UpS"/>
-                                    <outlet property="hdoServiceCodeLabel" destination="KAZ-DC-jeu" id="BpQ-Zd-CNe"/>
+                                    <outlet property="iccIdCodeLabel" destination="KAZ-DC-jeu" id="W6d-2Y-jXt"/>
                                     <outlet property="numberLabel" destination="siA-BY-ZXV" id="ZJ9-2y-3ab"/>
                                     <outlet property="regulationLabel" destination="gZT-Py-bga" id="9gY-GZ-7dR"/>
                                     <outlet property="smsLabel" destination="1h1-jD-K42" id="DKi-yN-vQ2"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="2" indentationWidth="0.0" reuseIdentifier="Coupon" id="hAx-Dt-ofV" customClass="MIOCouponCell">
-                                <rect key="frame" x="0.0" y="399" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hAx-Dt-ofV" id="b2v-a3-6sR">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coupon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHo-c7-V1z">
-                                            <rect key="frame" x="20" y="11" width="137" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="300 MB" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uba-sd-a0a">
-                                            <rect key="frame" x="147" y="11" width="135" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Uba-sd-a0a" secondAttribute="trailing" constant="5" id="jPx-xP-hPk"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="couponLabel" destination="Uba-sd-a0a" id="Mhy-kh-etM"/>
-                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="coupon" id="jNO-EF-LZY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

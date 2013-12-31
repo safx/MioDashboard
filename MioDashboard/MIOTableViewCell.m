@@ -15,11 +15,15 @@
 - (void)setModelWithCouponHdoInfo:(MIOCouponHdoInfo*)couponHdoInfo packetHdoInfo:(MIOPacketHdoInfo*)packetHdoInfo {
     self.couponHdoInfo = couponHdoInfo;
     self.packetHdoInfo = packetHdoInfo;
-    
-    self.hdoServiceCodeLabel.text = couponHdoInfo.hdoServiceCode;
-    self.numberLabel.text = couponHdoInfo.number;
-    self.regulationLabel.text = couponHdoInfo.regulation? NSLocalizedString(@"Yes", @"Yes") : NSLocalizedString(@"No", @"No");
-    self.smsLabel.text = couponHdoInfo.sms? NSLocalizedString(@"Yes", @"Yes") : NSLocalizedString(@"No", @"No");
+
+    NSString* a = [couponHdoInfo.number substringWithRange:NSMakeRange(0, 3)];
+    NSString* b = [couponHdoInfo.number substringWithRange:NSMakeRange(3, 4)];
+    NSString* c = [couponHdoInfo.number substringFromIndex:7];
+    self.numberLabel.text = [NSString stringWithFormat:@"%@-%@-%@", a, b, c];
+
+    self.iccIdCodeLabel.text = couponHdoInfo.iccid;
+    self.regulationLabel.hidden = !couponHdoInfo.regulation;
+    self.smsLabel.hidden = !couponHdoInfo.sms;
     self.couponSwitch.on = couponHdoInfo.couponUse;
     
     int total = [Underscore.array(packetHdoInfo.packetLog).reduce(@0, ^id(NSNumber* v, MIOPacketLog* e) {

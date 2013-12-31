@@ -15,7 +15,7 @@
 @class MIOServiceViewModel;
 
 @interface MIOHdoServiceCodeCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *hdoServiceCodeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *iccIdCodeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *regulationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *smsLabel;
