@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 Safx Developers. All rights reserved.
 //
 
-#import "MIOResponse.h"
+#import "MIOResponseModel.h"
 
 @implementation MIOCouponResponse
 + (NSDictionary *)JSONKeyPathsByPropertyKey { return @{}; }

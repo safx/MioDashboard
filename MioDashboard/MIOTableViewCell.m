@@ -7,7 +7,7 @@
 //
 
 #import "MIOTableViewCell.h"
-#import "MIOResponse.h"
+#import "MIOResponseModel.h"
 #import "MIOServiceViewModel.h"
 
 

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 Safx Developers. All rights reserved.
 //
 
-#import "MIOResponse.h"
+#import "MIOResponseModel.h"
 #import "MIOServiceViewModel.h"
 #import "MIORestHelper.h"
 #import <TWMessageBarManager.h>
@@ -201,6 +201,7 @@
         [[[self.restHelper authorize] catch:^RACSignal *(NSError *error) {
             @strongify(self);
             [self showErrorMessageForRestAPI:error];
+            return [RACSignal empty];
         }] subscribeCompleted:^{
             @strongify(self);
             [self loadInformation_impl];

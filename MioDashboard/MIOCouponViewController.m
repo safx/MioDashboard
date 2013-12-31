@@ -7,7 +7,7 @@
 //
 
 #import <XYPieChart.h>
-#import "MIOResponse.h"
+#import "MIOResponseModel.h"
 #import "MIOCouponViewController.h"
 #import "MIOCouponViewModel.h"
 

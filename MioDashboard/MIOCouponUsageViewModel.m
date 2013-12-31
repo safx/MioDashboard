@@ -7,7 +7,7 @@
 //
 
 #import "MIOCouponUsageViewModel.h"
-#import "MIOResponse.h"
+#import "MIOResponseModel.h"
 #import <iOSPlot/PCLineChartView.h>
 
 

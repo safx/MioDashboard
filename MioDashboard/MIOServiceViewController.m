@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 Safx Developers. All rights reserved.
 //
 
-#import "MIOResponse.h"
+#import "MIOResponseModel.h"
 #import "MIOServiceViewController.h"
 #import "MIOServiceViewModel.h"
 #import "MIOTableViewCell.h"
@@ -29,11 +29,8 @@
     self.viewModel = MIOServiceViewModel.alloc.init;
 
     @weakify(self);
-    [RACObserve(self.viewModel, couponResponse.couponInfo) subscribeNext:^(id x) {
-        @strongify(self);
-        [self.tableView reloadData];
-    }];
-    [RACObserve(self.viewModel, packetResponse.packetLogInfo) subscribeNext:^(id x) {
+    [[RACSignal combineLatest:@[RACObserve(self.viewModel, couponResponse.couponInfo),
+                               RACObserve(self.viewModel, packetResponse.packetLogInfo)]] subscribeNext:^(id x) {
         @strongify(self);
         [self.tableView reloadData];
     }];
