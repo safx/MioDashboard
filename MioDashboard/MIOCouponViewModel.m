@@ -11,7 +11,7 @@
 
 @implementation MIOCouponViewModel
 
-- (instancetype)initWithCouponInfo:(MIOCouponInfo*)couponInfo packetLogInfo:(MIOPacketLogInfo*)packetLogInfo {
+- (instancetype)initWithCouponInfo:(MIOCouponInfo*)couponInfo {
     self = [super init];
     if (self) {
         self.couponTotal = Underscore.array(couponInfo.coupon).reduce(@0, ^id(NSNumber* v, MIOCoupon* e) {
@@ -28,7 +28,7 @@
             return @{@"label":date, @"type":e.type, @"volume":@(e.volume)};
         }).unwrap;
 
-        NSArray* usages = Underscore.array(packetLogInfo.hdoInfo).map(^id(MIOPacketHdoInfo* hdoInfo) {
+        NSArray* usages = Underscore.array(couponInfo.hdoInfo).map(^id(MIOCouponHdoInfo* hdoInfo) {
             int sum = [Underscore.array(hdoInfo.packetLog).reduce(@0, ^id(NSNumber* v, MIOPacketLog* e) {
                 return @(v.intValue + e.withCoupon);
             }) intValue];

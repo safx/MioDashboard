@@ -13,6 +13,7 @@
 @class MIOPacketResponse;
 
 
+
 @interface MIOCouponResponse : MTLModel<MTLJSONSerializing>
 @property NSString* returnCode;
 @property NSArray* couponInfo;
@@ -42,6 +43,7 @@
 @property BOOL sms;
 @property BOOL couponUse;
 //@property NSArray* coupon;
+@property NSArray* packetLog; // assgin from MIOPacketResponse
 @end
 
 

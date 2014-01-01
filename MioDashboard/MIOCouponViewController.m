@@ -92,9 +92,9 @@
 
 #pragma mark -
 
-- (void)setModelWithCouponInfo:(MIOCouponInfo*)couponInfo packetLogInfo:(MIOPacketLogInfo*)packetLogInfo {
+- (void)setModelWithCouponInfo:(MIOCouponInfo*)couponInfo {
     self.title = couponInfo.hddServiceCode;
-    self.viewModel = [[MIOCouponViewModel alloc] initWithCouponInfo:couponInfo packetLogInfo:packetLogInfo];
+    self.viewModel = [[MIOCouponViewModel alloc] initWithCouponInfo:couponInfo];
 }
 
 @end

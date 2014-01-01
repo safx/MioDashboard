@@ -41,9 +41,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setModelWithpacketHdoInfo:(MIOPacketHdoInfo*)packetHdoInfo {
-    self.title = packetHdoInfo.hdoServiceCode;
-    self.viewModel = [[MIOCouponUsageViewModel alloc] initWithPacketHdoInfo:packetHdoInfo];
+- (void)setModelWithCouponHdoInfo:(MIOCouponHdoInfo*)hdoInfo {
+    self.title = hdoInfo.hdoServiceCode;
+    self.viewModel = [[MIOCouponUsageViewModel alloc] initWithCouponHdoInfo:hdoInfo];
 }
 
 @end

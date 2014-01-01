@@ -12,10 +12,10 @@
 
 
 @implementation MIOCouponUsageViewModel
-- (instancetype)initWithPacketHdoInfo:(MIOPacketHdoInfo*)packethdoInfo {
+- (instancetype)initWithCouponHdoInfo:(MIOCouponHdoInfo*)hdoInfo {
     self = [super init];
     if (self) {
-        self.packetDate = Underscore.array(packethdoInfo.packetLog).map(^id(MIOPacketLog* e) {
+        self.packetDate = Underscore.array(hdoInfo.packetLog).map(^id(MIOPacketLog* e) {
             NSString* date = e.date;
             if ([date intValue] % 5 != 1) return @"";
             
@@ -28,7 +28,7 @@
         {
             PCLineChartViewComponent* c = PCLineChartViewComponent.alloc.init;
             c.title = NSLocalizedString(@"Coupon", @"Coupon");
-            c.points = Underscore.array(packethdoInfo.packetLog).map(^id(MIOPacketLog* e) {
+            c.points = Underscore.array(hdoInfo.packetLog).map(^id(MIOPacketLog* e) {
                 return @(e.withCoupon);
             }).unwrap;
             c.colour = PCColorRed;
@@ -37,7 +37,7 @@
         {
             PCLineChartViewComponent* c = PCLineChartViewComponent.alloc.init;
             c.title = NSLocalizedString(@"Sum", @"Sum");
-            c.points = Underscore.array(packethdoInfo.packetLog).map(^id(MIOPacketLog* e) {
+            c.points = Underscore.array(hdoInfo.packetLog).map(^id(MIOPacketLog* e) {
                 return @(e.withoutCoupon + e.withCoupon);
             }).unwrap;
             c.colour = PCColorBlue;

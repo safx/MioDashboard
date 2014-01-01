@@ -35,114 +35,6 @@ typedef id(^RACSignalErrorBlock)(NSError*);
     return self;
 }
 
-- (void)loadInformation_forText {
-    NSDictionary* cr =
-    @{
-      @"returnCode": @"OK",
-      @"couponInfo": @[
-        @{
-            @"hddServiceCode": @"hddXXXXXXXX",
-            @"hdoInfo"       : @[
-                    @{
-                                     @"hdoServiceCode": @"hdoXXXXXXXX",
-                                     @"number"        : @"080XXXXXXXX",
-                                     @"iccid"         : @"DN00XXXXXXXXXX",
-                                     @"regulation"    : @true,
-                                     @"sms"           : @false,
-                                     @"couponUse"     : @true,
-                                     @"coupon"        : @[@{ @"volume": @0, @"expire":NSNull.null, @"type": @"sim" }]
-                    },
-                    @{
-                        @"hdoServiceCode": @"hdoYYYYYYYY",
-                        @"number"        : @"080YYYYYYYY",
-                        @"iccid"         : @"DN00YYYYYYYYYYY",
-                        @"regulation"    : @true,
-                        @"sms"           : @false,
-                        @"couponUse"     : @true,
-                        @"coupon"        : @[@{ @"volume": @0, @"expire":NSNull.null, @"type": @"sim" }]
-                        }
-                    ],
-            @"coupon"       : @[
-                    @{@"volume":@100, @"expire":@"201312", @"type":@"bundle"},
-                    @{@"volume":@200, @"expire":@"201401", @"type":@"bundle"},
-                    @{@"volume":@0,   @"expire":@"201312", @"type":@"topup"},
-                    @{@"volume":@400, @"expire":@"201401", @"type":@"topup"},
-                    @{@"volume":@0,   @"expire":@"201402", @"type":@"topup"},
-                    @{@"volume":@400, @"expire":@"201403", @"type":@"topup"}]
-        }]
-    };
-
-
-
-    NSDictionary* pr =
-    @{
-      @"returnCode": @"OK",
-      @"packetLogInfo": @[
-          @{
-              @"hddServiceCode": @"hddXXXXXXXX",
-              @"hdoInfo"       : @[
-                      @{
-                          @"hdoServiceCode": @"hdoXXXXXXXX",
-                          @"packetLog"     : @[
-                                  @{ @"date": @"20131101", @"withCoupon": @50, @"withoutCoupon": @19 },
-                                  @{ @"date": @"20131102", @"withCoupon": @25, @"withoutCoupon": @30 },
-                                  @{ @"date": @"20131103", @"withCoupon": @12, @"withoutCoupon": @50 },
-                                  @{ @"date": @"20131104", @"withCoupon": @0, @"withoutCoupon": @8 },
-                                  @{ @"date": @"20131105", @"withCoupon": @50, @"withoutCoupon": @50 },
-                                  @{ @"date": @"20131106", @"withCoupon": @25, @"withoutCoupon": @30 },
-                                  @{ @"date": @"20131107", @"withCoupon": @12, @"withoutCoupon": @50 },
-                                  @{ @"date": @"20131108", @"withCoupon": @50, @"withoutCoupon": @20 },
-                                  @{ @"date": @"20131109", @"withCoupon": @25, @"withoutCoupon": @30 },
-                                  @{ @"date": @"20131110", @"withCoupon": @12, @"withoutCoupon": @10 },
-                                  @{ @"date": @"20131111", @"withCoupon": @0, @"withoutCoupon": @8 },
-                                  @{ @"date": @"20131112", @"withCoupon": @50, @"withoutCoupon": @50 },
-                                  @{ @"date": @"20131113", @"withCoupon": @25, @"withoutCoupon": @30 },
-                                  @{ @"date": @"20131114", @"withCoupon": @72, @"withoutCoupon": @1 },
-                                  @{ @"date": @"20131115", @"withCoupon": @50, @"withoutCoupon": @50 },
-                                  @{ @"date": @"20131116", @"withCoupon": @25, @"withoutCoupon": @30 },
-                                  @{ @"date": @"20131117", @"withCoupon": @12, @"withoutCoupon": @50 },
-                                  @{ @"date": @"20131118", @"withCoupon": @0, @"withoutCoupon": @8 },
-                                  @{ @"date": @"20131119", @"withCoupon": @50, @"withoutCoupon": @50 },
-                                  @{ @"date": @"20131120", @"withCoupon": @25, @"withoutCoupon": @30 },
-                                  @{ @"date": @"20131121", @"withCoupon": @12, @"withoutCoupon": @50 },
-                                  @{ @"date": @"20131122", @"withCoupon": @0, @"withoutCoupon": @59 }
-                                  ]
-                          },
-                      @{
-                          @"hdoServiceCode": @"hdoYYYYYYYY",
-                          @"packetLog"     : @[
-                                  @{ @"date": @"20131101", @"withCoupon": @0, @"withoutCoupon": @9 },
-                                  @{ @"date": @"20131102", @"withCoupon": @5, @"withoutCoupon": @8 },
-                                  @{ @"date": @"20131103", @"withCoupon": @32, @"withoutCoupon": @9 },
-                                  @{ @"date": @"20131104", @"withCoupon": @4, @"withoutCoupon": @8 },
-                                  @{ @"date": @"20131105", @"withCoupon": @0, @"withoutCoupon": @5 },
-                                  @{ @"date": @"20131106", @"withCoupon": @15, @"withoutCoupon": @3 },
-                                  @{ @"date": @"20131107", @"withCoupon": @21, @"withoutCoupon": @1 },
-                                  @{ @"date": @"20131108", @"withCoupon": @5, @"withoutCoupon": @20 },
-                                  @{ @"date": @"20131109", @"withCoupon": @5, @"withoutCoupon": @40 },
-                                  @{ @"date": @"20131110", @"withCoupon": @2, @"withoutCoupon": @0 },
-                                  @{ @"date": @"20131111", @"withCoupon": @0, @"withoutCoupon": @1 },
-                                  @{ @"date": @"20131112", @"withCoupon": @0, @"withoutCoupon": @0 },
-                                  @{ @"date": @"20131113", @"withCoupon": @5, @"withoutCoupon": @0 },
-                                  @{ @"date": @"20131114", @"withCoupon": @7, @"withoutCoupon": @8 },
-                                  @{ @"date": @"20131115", @"withCoupon": @0, @"withoutCoupon": @50 },
-                                  @{ @"date": @"20131116", @"withCoupon": @2, @"withoutCoupon": @20 },
-                                  @{ @"date": @"20131117", @"withCoupon": @2, @"withoutCoupon": @10 },
-                                  @{ @"date": @"20131118", @"withCoupon": @0, @"withoutCoupon": @3 },
-                                  @{ @"date": @"20131119", @"withCoupon": @0, @"withoutCoupon": @30 },
-                                  @{ @"date": @"20131120", @"withCoupon": @3, @"withoutCoupon": @60 },
-                                  @{ @"date": @"20131121", @"withCoupon": @62, @"withoutCoupon": @0 },
-                                  @{ @"date": @"20131122", @"withCoupon": @52, @"withoutCoupon": @9 }
-                                  ]
-                          }
-                      ]
-              }]};
-    
-    NSError* error = nil;
-    self.couponResponse = [MTLJSONAdapter modelOfClass:MIOCouponResponse.class fromJSONDictionary:cr error:&error];
-    self.packetResponse = [MTLJSONAdapter modelOfClass:MIOPacketResponse.class fromJSONDictionary:pr error:&error];
-}
-
 - (RACSignalErrorBlock)errorBlock {
     @weakify(self);
     return ^(NSError* error) {
@@ -210,8 +102,25 @@ typedef id(^RACSignalErrorBlock)(NSError*);
     
     return [[[self loadInformationSignal] catch:errorBlock] map:^(NSArray* array) {
         @strongify(self);
-        self.couponResponse = createObject(MIOCouponResponse.class, [array[0] first]);
-        self.packetResponse = createObject(MIOPacketResponse.class, [array[1] first]);
+        MIOCouponResponse* couponResponse = createObject(MIOCouponResponse.class, [array[0] first]);
+        MIOPacketResponse* packetResponse = createObject(MIOPacketResponse.class, [array[1] first]);
+
+        for (MIOCouponInfo* couponInfo in couponResponse.couponInfo) {
+            NSString* hdd = couponInfo.hddServiceCode;
+            MIOPacketLogInfo* packetLogInfo = Underscore.find(packetResponse.packetLogInfo, ^BOOL(MIOPacketLogInfo* e) {
+                return [e.hddServiceCode isEqualToString:hdd];
+            });
+            for (MIOCouponHdoInfo* couponHdoInfo in couponInfo.hdoInfo) {
+                NSString* hdo = couponHdoInfo.hdoServiceCode;
+                MIOPacketHdoInfo* packetHdoInfo = Underscore.find(packetLogInfo.hdoInfo, ^BOOL(MIOPacketHdoInfo* e) {
+                    return [e.hdoServiceCode isEqualToString:hdo];
+                });
+                couponHdoInfo.packetLog = packetHdoInfo.packetLog;
+            }
+        }
+        
+        self.couponInfoArray = couponResponse.couponInfo;
+        
         return array;
     }];
 }

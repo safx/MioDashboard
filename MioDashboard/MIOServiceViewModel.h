@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class MIOCouponResponse;
-@class MIOPacketResponse;
+@class MIOCouponHdoInfo;
 
 @interface MIOServiceViewModel : NSObject
-@property MIOCouponResponse* couponResponse;
-@property MIOPacketResponse* packetResponse;
+@property NSArray* couponInfoArray;
 - (RACSignal*)loadInformation;
 - (void)changeCouponUse:(BOOL)couponUse forHdoInfo:(MIOCouponHdoInfo*)hdoInfo;
 @end

@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class MIOPacketHdoInfo;
+@class MIOCouponHdoInfo;
 
 @interface MIOCouponUsageViewModel : NSObject
 @property NSArray* packetDate;
 @property NSArray* packetUsages;
-- (instancetype)initWithPacketHdoInfo:(MIOPacketHdoInfo*)packetLogInfo;
+- (instancetype)initWithCouponHdoInfo:(MIOCouponHdoInfo*)hdoInfo;
 @end

@@ -22,18 +22,16 @@
 @property (weak, nonatomic) IBOutlet UISwitch *couponSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *couponUsedLabel;
 @property (weak, nonatomic) MIOCouponHdoInfo* couponHdoInfo;
-@property (weak, nonatomic) MIOPacketHdoInfo* packetHdoInfo;
 @property (weak, nonatomic) MIOServiceViewModel* viewModel;
 
 - (IBAction)onCouponSwitchTouched:(UISwitch *)sender;
-- (void)setModelWithCouponHdoInfo:(MIOCouponHdoInfo*)couponHdoInfo packetHdoInfo:(MIOPacketHdoInfo*)packetHdoInfo;
+- (void)setModelWithCouponHdoInfo:(MIOCouponHdoInfo*)couponHdoInfo;
 @end
 
 
 @interface MIOCouponCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *couponLabel;
 @property (weak, nonatomic) MIOCouponInfo* couponInfo;
-@property (weak, nonatomic) MIOPacketLogInfo* packetLogInfo;
-- (void)setModelWithCouponInfo:(MIOCouponInfo*)couponInfo packetHdoInfo:(MIOPacketLogInfo*)packetLogInfo;
+- (void)setModelWithCouponInfo:(MIOCouponInfo*)couponInfo;
 @end
 

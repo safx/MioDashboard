@@ -19,5 +19,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *unitLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 
-- (void)setModelWithCouponInfo:(MIOCouponInfo*)couponInfo packetLogInfo:(MIOPacketLogInfo*)packetLogInfo;
+- (void)setModelWithCouponInfo:(MIOCouponInfo*)couponInfo;
 @end

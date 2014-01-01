@@ -15,5 +15,5 @@
 @property NSNumber* couponTotal;
 @property NSArray* slices;
 
-- (instancetype)initWithCouponInfo:(MIOCouponInfo*)couponInfo packetLogInfo:(MIOPacketLogInfo*)packetLogInfo;
+- (instancetype)initWithCouponInfo:(MIOCouponInfo*)couponInfo;
 @end

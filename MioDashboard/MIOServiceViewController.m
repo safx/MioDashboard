@@ -29,8 +29,7 @@
     self.viewModel = MIOServiceViewModel.alloc.init;
 
     @weakify(self);
-    [[RACSignal combineLatest:@[RACObserve(self.viewModel, couponResponse.couponInfo),
-                               RACObserve(self.viewModel, packetResponse.packetLogInfo)]] subscribeNext:^(id x) {
+    [RACObserve(self.viewModel, couponInfoArray) subscribeNext:^(id x) {
         @strongify(self);
         [self.tableView reloadData];
     }];
@@ -55,18 +54,18 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.viewModel.couponResponse.couponInfo.count;
+    return self.viewModel.couponInfoArray.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    MIOCouponInfo* info = self.viewModel.couponResponse.couponInfo[section];
+    MIOCouponInfo* info = self.viewModel.couponInfoArray[section];
     return info.hddServiceCode;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    MIOCouponInfo* info = self.viewModel.couponResponse.couponInfo[section];
+    MIOCouponInfo* info = self.viewModel.couponInfoArray[section];
     return 1 + info.hdoInfo.count;
 }
 
@@ -88,25 +87,15 @@
         default: cellIdentifier = @"hdoServiceCode"; break;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    MIOCouponInfo* couponInfo = self.viewModel.couponResponse.couponInfo[indexPath.section];
-    NSString* hdd = couponInfo.hddServiceCode;
-    MIOPacketLogInfo* packetLogInfo = Underscore.find(self.viewModel.packetResponse.packetLogInfo, ^BOOL(MIOPacketLogInfo* e) {
-        return [e.hddServiceCode isEqualToString:hdd];
-    });
+    MIOCouponInfo* couponInfo = self.viewModel.couponInfoArray[indexPath.section];
     
     int index = indexPath.row - 1;
     switch (indexPath.row) {
-        case 0:  [(MIOCouponCell*)cell setModelWithCouponInfo:couponInfo packetHdoInfo:packetLogInfo]; break;
+        case 0:  [(MIOCouponCell*)cell setModelWithCouponInfo:couponInfo]; break;
         default: {
             MIOCouponHdoInfo* couponHdoInfo = couponInfo.hdoInfo[index];
-            NSString* hdo = couponHdoInfo.hdoServiceCode;
-            
-            MIOPacketHdoInfo* packetHdoInfo = Underscore.find(packetLogInfo.hdoInfo, ^BOOL(MIOPacketHdoInfo* e) {
-                return [e.hdoServiceCode isEqualToString:hdo];
-            });
-
             [(MIOHdoServiceCodeCell*)cell setViewModel:self.viewModel];
-            [(MIOHdoServiceCodeCell*)cell setModelWithCouponHdoInfo:couponHdoInfo packetHdoInfo:packetHdoInfo];
+            [(MIOHdoServiceCodeCell*)cell setModelWithCouponHdoInfo:couponHdoInfo];
         } break;
     }
     
@@ -120,10 +109,10 @@
 {
     if ([segue.identifier isEqualToString:@"coupon"]) {
         MIOCouponCell* cell = sender;
-        [(MIOCouponViewController*) segue.destinationViewController setModelWithCouponInfo:cell.couponInfo packetLogInfo:cell.packetLogInfo];
+        [(MIOCouponViewController*) segue.destinationViewController setModelWithCouponInfo:cell.couponInfo];
     } else if ([segue.identifier isEqualToString:@"couponUsage"]) {
         MIOHdoServiceCodeCell* cell = (MIOHdoServiceCodeCell*) [[[sender superview] superview] superview]; // FIXME
-        [(MIOCouponUsageViewController*) segue.destinationViewController setModelWithpacketHdoInfo:cell.packetHdoInfo];
+        [(MIOCouponUsageViewController*) segue.destinationViewController setModelWithCouponHdoInfo:cell.couponHdoInfo];
     }
 }
 

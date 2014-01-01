@@ -12,9 +12,8 @@
 
 
 @implementation MIOHdoServiceCodeCell
-- (void)setModelWithCouponHdoInfo:(MIOCouponHdoInfo*)couponHdoInfo packetHdoInfo:(MIOPacketHdoInfo*)packetHdoInfo {
+- (void)setModelWithCouponHdoInfo:(MIOCouponHdoInfo*)couponHdoInfo {
     self.couponHdoInfo = couponHdoInfo;
-    self.packetHdoInfo = packetHdoInfo;
 
     NSString* a = [couponHdoInfo.number substringWithRange:NSMakeRange(0, 3)];
     NSString* b = [couponHdoInfo.number substringWithRange:NSMakeRange(3, 4)];
@@ -26,7 +25,7 @@
     self.smsLabel.hidden = !couponHdoInfo.sms;
     self.couponSwitch.on = couponHdoInfo.couponUse;
     
-    int total = [Underscore.array(packetHdoInfo.packetLog).reduce(@0, ^id(NSNumber* v, MIOPacketLog* e) {
+    int total = [Underscore.array(couponHdoInfo.packetLog).reduce(@0, ^id(NSNumber* v, MIOPacketLog* e) {
         return @(v.intValue + e.withCoupon);
     }) intValue];
  
@@ -40,9 +39,8 @@
 
 
 @implementation MIOCouponCell
-- (void)setModelWithCouponInfo:(MIOCouponInfo*)couponInfo packetHdoInfo:(MIOPacketLogInfo*)packetLogInfo {
+- (void)setModelWithCouponInfo:(MIOCouponInfo*)couponInfo {
     self.couponInfo = couponInfo;
-    self.packetLogInfo = packetLogInfo;
     
     int total = [Underscore.array(couponInfo.coupon).reduce(@0, ^id(NSNumber* v, MIOCoupon* e) {
         return @(v.intValue + e.volume);
