@@ -97,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="630" y="24"/>
         </scene>
-        <!--Service View Controller - IIJMio Dashboard-->
+        <!--Service View Controller - IIJmio Dashboard-->
         <scene sceneID="jfr-U0-GrU">
             <objects>
                 <tableViewController id="6eX-Uu-Sy5" customClass="MIOServiceViewController" sceneMemberID="viewController">
@@ -252,7 +252,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="IIJMio Dashboard" id="GAh-Fc-ubj"/>
+                    <navigationItem key="navigationItem" title="IIJmio Dashboard" id="GAh-Fc-ubj"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="DBu-uQ-SP4">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>

@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Service View Controller - IIJMio Dashboard-->
+        <!--Service View Controller - IIJmio Dashboard-->
         <scene sceneID="MAN-f4-51V">
             <objects>
                 <tableViewController id="y4x-zV-0m3" customClass="MIOServiceViewController" sceneMemberID="viewController">
@@ -141,7 +141,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="IIJMio Dashboard" id="MMb-hi-dKT"/>
+                    <navigationItem key="navigationItem" title="IIJmio Dashboard" id="MMb-hi-dKT"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Y0i-QV-GOC">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>

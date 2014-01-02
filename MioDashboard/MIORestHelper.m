@@ -133,7 +133,7 @@
 }
 
     
-#pragma mark - IIJMio REST API
+#pragma mark - IIJmio REST API
 
 - (NSMutableURLRequest*)apiRequestWithURLString:(NSString*)urlString {
     NSAssert(_clientID && _accessToken, @"should be non-nil");
