@@ -128,10 +128,19 @@ typedef id(^RACSignalErrorBlock)(NSError*);
 - (void)changeCouponUse:(BOOL)couponUse forHdoInfo:(MIOCouponHdoInfo*)hdoInfo {
     if (hdoInfo.couponUse == couponUse) return;
     
-    [[[self.restHelper putCoupon:couponUse forHdoServiceCode:hdoInfo.hdoServiceCode] catch:self.errorBlock] subscribeNext:^(RACTuple* tuple) {
+    hdoInfo.couponUse = couponUse;
+    @weakify(self);
+    [[[self.restHelper putCoupon:couponUse forHdoServiceCode:hdoInfo.hdoServiceCode] catch:^RACSignal *(NSError *error) {
+        @strongify(self);
+        hdoInfo.couponUse = !couponUse;
+        [self showErrorMessageForRestAPI:error];
+        return [RACSignal empty];
+    }] subscribeNext:^(RACTuple* tuple) {
         NSDictionary* dic = tuple.first;
         NSAssert([dic[@"returnCode"] isEqualToString:@"OK"], @"returnCode should be OK");
-        hdoInfo.couponUse = couponUse;
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:NSLocalizedString(@"Updated", @"Updated")
+                                                       description:NSLocalizedString(@"Coupon switch was changed successfully", @"Coupon switch was changed successfully")
+                                                              type:TWMessageBarMessageTypeSuccess];
     }];
 }
 

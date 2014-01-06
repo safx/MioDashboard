@@ -23,7 +23,7 @@
     self.iccIdCodeLabel.text = couponHdoInfo.iccid;
     self.regulationLabel.hidden = !couponHdoInfo.regulation;
     self.smsLabel.hidden = !couponHdoInfo.sms;
-    self.couponSwitch.on = couponHdoInfo.couponUse;
+    RAC(self.couponSwitch, on) = RACObserve(self.couponHdoInfo, couponUse);
     
     int total = [Underscore.array(couponHdoInfo.packetLog).reduce(@0, ^id(NSNumber* v, MIOPacketLog* e) {
         return @(v.intValue + e.withCoupon);
