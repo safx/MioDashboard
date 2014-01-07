@@ -9,6 +9,7 @@ pod 'AFNetworking-RACExtensions', '~> 0.1.2'
 pod 'XYPieChart', '~> 0.2'
 pod 'iOSPlot', '~> 1.0.1'
 pod 'TWMessageBarManager', '~> 1.3.0'
+pod 'VTAcknowledgementsViewController', '~> 0.3'
 end
 
 target "MioDashboardTests" do
@@ -19,5 +20,6 @@ pod 'AFNetworking-RACExtensions', '~> 0.1.2'
 pod 'XYPieChart', '~> 0.2'
 pod 'iOSPlot', '~> 1.0.1'
 pod 'TWMessageBarManager', '~> 1.3.0'
+pod 'VTAcknowledgementsViewController', '~> 0.3'
 end
 

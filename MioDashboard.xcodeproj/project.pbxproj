@@ -34,6 +34,7 @@
 		8DCC68CE1871B1DD004BD5FB /* MIOCouponViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC68CD1871B1DD004BD5FB /* MIOCouponViewModel.m */; };
 		8DCC68D11871CACE004BD5FB /* MIOCouponUsageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC68D01871CACE004BD5FB /* MIOCouponUsageViewModel.m */; };
 		8DEB7566186DDCC800A7EA42 /* MIORestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB7565186DDCC800A7EA42 /* MIORestHelper.m */; };
+		8DF35A3C187C57990060BF7B /* Pods-MioDashboard-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DF35A3B187C57990060BF7B /* Pods-MioDashboard-acknowledgements.plist */; };
 		E395BAD657B448E7A4BE002B /* libPods-MioDashboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D868CA4E454CE6B96F96F5 /* libPods-MioDashboard.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		8DCC68D01871CACE004BD5FB /* MIOCouponUsageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOCouponUsageViewModel.m; sourceTree = "<group>"; };
 		8DEB7564186DDCC800A7EA42 /* MIORestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIORestHelper.h; sourceTree = "<group>"; };
 		8DEB7565186DDCC800A7EA42 /* MIORestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIORestHelper.m; sourceTree = "<group>"; };
+		8DF35A3B187C57990060BF7B /* Pods-MioDashboard-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-MioDashboard-acknowledgements.plist"; path = "Pods/Pods-MioDashboard-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		A1A6944940984437B4F0FCE8 /* Pods-MioDashboardTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioDashboardTests.xcconfig"; path = "Pods/Pods-MioDashboardTests.xcconfig"; sourceTree = "<group>"; };
 		C4D868CA4E454CE6B96F96F5 /* libPods-MioDashboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MioDashboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E2F7FADB6E4B4FBB24A6DB /* libPods-MioDashboardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MioDashboardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +188,7 @@
 		8D23F853186DD66600A7E996 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8DF35A3B187C57990060BF7B /* Pods-MioDashboard-acknowledgements.plist */,
 				8D23F861186DD66600A7E996 /* Main_iPad.storyboard */,
 				8D23F85E186DD66600A7E996 /* Main_iPhone.storyboard */,
 				8D23F854186DD66600A7E996 /* MioDashboard-Info.plist */,
@@ -307,6 +310,7 @@
 			files = (
 				8D94DC31187082DE0066EF5E /* EXTScope.m in Resources */,
 				8D94DC30187082DE0066EF5E /* EXTScope.h in Resources */,
+				8DF35A3C187C57990060BF7B /* Pods-MioDashboard-acknowledgements.plist in Resources */,
 				8D94DC32187082DE0066EF5E /* metamacros.h in Resources */,
 				8D23F863186DD66600A7E996 /* Main_iPad.storyboard in Resources */,
 				8D23F868186DD66700A7E996 /* Images.xcassets in Resources */,

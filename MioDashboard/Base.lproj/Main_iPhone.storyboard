@@ -252,11 +252,14 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="IIJmio Dashboard" id="GAh-Fc-ubj"/>
+                    <navigationItem key="navigationItem" title="IIJmio Dashboard" id="GAh-Fc-ubj">
+                        <barButtonItem key="rightBarButtonItem" title="About" id="9VG-uC-jhM"/>
+                    </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="DBu-uQ-SP4">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="aboutButton" destination="9VG-uC-jhM" id="fDR-MP-ZHU"/>
                         <outlet property="infoRefreshControl" destination="DBu-uQ-SP4" id="zRp-8e-R1X"/>
                     </connections>
                 </tableViewController>

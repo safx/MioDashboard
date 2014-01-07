@@ -10,4 +10,5 @@
 
 @interface MIOServiceViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIRefreshControl *infoRefreshControl;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *aboutButton;
 @end

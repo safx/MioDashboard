@@ -141,11 +141,14 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="IIJmio Dashboard" id="MMb-hi-dKT"/>
+                    <navigationItem key="navigationItem" title="IIJmio Dashboard" id="MMb-hi-dKT">
+                        <barButtonItem key="rightBarButtonItem" title="About" id="b6B-ze-QCm"/>
+                    </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Y0i-QV-GOC">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="aboutButton" destination="b6B-ze-QCm" id="PhZ-aL-Ouw"/>
                         <outlet property="infoRefreshControl" destination="Y0i-QV-GOC" id="0hX-pn-HLI"/>
                     </connections>
                 </tableViewController>

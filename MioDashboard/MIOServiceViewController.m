@@ -12,6 +12,8 @@
 #import "MIOTableViewCell.h"
 #import "MIOCouponViewController.h"
 #import "MIOCouponUsageViewController.h"
+#import "VTAcknowledgementsViewController.h"
+
 
 @interface MIOServiceViewController ()
 @property MIOServiceViewModel* viewModel;
@@ -41,6 +43,12 @@
         }] subscribeCompleted:^{
             
         }];
+    }];
+    
+    self.aboutButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        UIViewController *viewController = [VTAcknowledgementsViewController acknowledgementsViewController];
+        [self.navigationController pushViewController:viewController animated:YES];
+        return [RACSignal empty];
     }];
 }
 
