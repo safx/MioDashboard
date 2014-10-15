@@ -42,7 +42,7 @@
 - (void)setModelWithCouponInfo:(MIOCouponInfo*)couponInfo {
     self.couponInfo = couponInfo;
     
-    int total = [Underscore.array(couponInfo.coupon).reduce(@0, ^id(NSNumber* v, MIOCoupon* e) {
+    long long total = [Underscore.array(couponInfo.coupon).reduce(@0, ^id(NSNumber* v, MIOCoupon* e) {
         return @(v.intValue + e.volume);
     }) intValue];
 
