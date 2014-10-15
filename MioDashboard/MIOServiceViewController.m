@@ -97,7 +97,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     MIOCouponInfo* couponInfo = self.viewModel.couponInfoArray[indexPath.section];
     
-    int index = indexPath.row - 1;
+    long index = indexPath.row - 1;
     switch (indexPath.row) {
         case 0:  [(MIOCouponCell*)cell setModelWithCouponInfo:couponInfo]; break;
         default: {
@@ -119,7 +119,7 @@
         MIOCouponCell* cell = sender;
         [(MIOCouponViewController*) segue.destinationViewController setModelWithCouponInfo:cell.couponInfo];
     } else if ([segue.identifier isEqualToString:@"couponUsage"]) {
-        MIOHdoServiceCodeCell* cell = (MIOHdoServiceCodeCell*) [[[sender superview] superview] superview]; // FIXME
+        MIOHdoServiceCodeCell* cell = (MIOHdoServiceCodeCell*) [[sender superview] superview]; // FIXME
         [(MIOCouponUsageViewController*) segue.destinationViewController setModelWithCouponHdoInfo:cell.couponHdoInfo];
     }
 }
