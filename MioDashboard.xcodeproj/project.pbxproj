@@ -34,7 +34,6 @@
 		8DCC68CE1871B1DD004BD5FB /* MIOCouponViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC68CD1871B1DD004BD5FB /* MIOCouponViewModel.m */; };
 		8DCC68D11871CACE004BD5FB /* MIOCouponUsageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC68D01871CACE004BD5FB /* MIOCouponUsageViewModel.m */; };
 		8DEB7566186DDCC800A7EA42 /* MIORestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB7565186DDCC800A7EA42 /* MIORestHelper.m */; };
-		8DF35A3C187C57990060BF7B /* Pods-MioDashboard-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DF35A3B187C57990060BF7B /* Pods-MioDashboard-acknowledgements.plist */; };
 		E395BAD657B448E7A4BE002B /* libPods-MioDashboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D868CA4E454CE6B96F96F5 /* libPods-MioDashboard.a */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4A55AEDB76414339B66FA876 /* Pods-MioDashboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioDashboard.xcconfig"; path = "Pods/Pods-MioDashboard.xcconfig"; sourceTree = "<group>"; };
+		5DCBE9A36163B186D4BF2B2E /* Pods-MioDashboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioDashboardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MioDashboardTests/Pods-MioDashboardTests.release.xcconfig"; sourceTree = "<group>"; };
+		6860F425B4D8425623307355 /* Pods-MioDashboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioDashboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-MioDashboard/Pods-MioDashboard.release.xcconfig"; sourceTree = "<group>"; };
 		8D00C20D186EC48500CFEDAC /* MIOCouponUsageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIOCouponUsageViewController.h; sourceTree = "<group>"; };
 		8D00C20E186EC48500CFEDAC /* MIOCouponUsageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOCouponUsageViewController.m; sourceTree = "<group>"; };
 		8D00C24E187078F800CFEDAC /* MIOResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIOResponseModel.h; sourceTree = "<group>"; };
@@ -89,9 +89,9 @@
 		8DCC68D01871CACE004BD5FB /* MIOCouponUsageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOCouponUsageViewModel.m; sourceTree = "<group>"; };
 		8DEB7564186DDCC800A7EA42 /* MIORestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIORestHelper.h; sourceTree = "<group>"; };
 		8DEB7565186DDCC800A7EA42 /* MIORestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIORestHelper.m; sourceTree = "<group>"; };
-		8DF35A3B187C57990060BF7B /* Pods-MioDashboard-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-MioDashboard-acknowledgements.plist"; path = "Pods/Pods-MioDashboard-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
-		A1A6944940984437B4F0FCE8 /* Pods-MioDashboardTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioDashboardTests.xcconfig"; path = "Pods/Pods-MioDashboardTests.xcconfig"; sourceTree = "<group>"; };
+		BB216BAF7E95D8974151078B /* Pods-MioDashboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioDashboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MioDashboard/Pods-MioDashboard.debug.xcconfig"; sourceTree = "<group>"; };
 		C4D868CA4E454CE6B96F96F5 /* libPods-MioDashboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MioDashboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3EA64BB45D59695A4F00A1B /* Pods-MioDashboardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioDashboardTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MioDashboardTests/Pods-MioDashboardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7E2F7FADB6E4B4FBB24A6DB /* libPods-MioDashboardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MioDashboardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,8 +129,7 @@
 				8D23F874186DD66700A7E996 /* MioDashboardTests */,
 				8D23F84B186DD66600A7E996 /* Frameworks */,
 				8D23F84A186DD66600A7E996 /* Products */,
-				4A55AEDB76414339B66FA876 /* Pods-MioDashboard.xcconfig */,
-				A1A6944940984437B4F0FCE8 /* Pods-MioDashboardTests.xcconfig */,
+				C0E915F0040F2489CD43354E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,7 +187,6 @@
 		8D23F853186DD66600A7E996 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8DF35A3B187C57990060BF7B /* Pods-MioDashboard-acknowledgements.plist */,
 				8D23F861186DD66600A7E996 /* Main_iPad.storyboard */,
 				8D23F85E186DD66600A7E996 /* Main_iPhone.storyboard */,
 				8D23F854186DD66600A7E996 /* MioDashboard-Info.plist */,
@@ -225,6 +223,17 @@
 				8D94DC2E187082DE0066EF5E /* metamacros.h */,
 			);
 			path = libobjc;
+			sourceTree = "<group>";
+		};
+		C0E915F0040F2489CD43354E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB216BAF7E95D8974151078B /* Pods-MioDashboard.debug.xcconfig */,
+				6860F425B4D8425623307355 /* Pods-MioDashboard.release.xcconfig */,
+				D3EA64BB45D59695A4F00A1B /* Pods-MioDashboardTests.debug.xcconfig */,
+				5DCBE9A36163B186D4BF2B2E /* Pods-MioDashboardTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,7 +319,6 @@
 			files = (
 				8D94DC31187082DE0066EF5E /* EXTScope.m in Resources */,
 				8D94DC30187082DE0066EF5E /* EXTScope.h in Resources */,
-				8DF35A3C187C57990060BF7B /* Pods-MioDashboard-acknowledgements.plist in Resources */,
 				8D94DC32187082DE0066EF5E /* metamacros.h in Resources */,
 				8D23F863186DD66600A7E996 /* Main_iPad.storyboard in Resources */,
 				8D23F868186DD66700A7E996 /* Images.xcassets in Resources */,
@@ -342,7 +350,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-MioDashboard-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MioDashboard/Pods-MioDashboard-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		58472B4344284A1D8A19B6F4 /* Copy Pods Resources */ = {
@@ -357,7 +365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-MioDashboardTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MioDashboardTests/Pods-MioDashboardTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CCA9B40E2B66408FA385E0FE /* Check Pods Manifest.lock */ = {
@@ -541,7 +549,7 @@
 		};
 		8D23F87F186DD66700A7E996 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A55AEDB76414339B66FA876 /* Pods-MioDashboard.xcconfig */;
+			baseConfigurationReference = BB216BAF7E95D8974151078B /* Pods-MioDashboard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -555,7 +563,7 @@
 		};
 		8D23F880186DD66700A7E996 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A55AEDB76414339B66FA876 /* Pods-MioDashboard.xcconfig */;
+			baseConfigurationReference = 6860F425B4D8425623307355 /* Pods-MioDashboard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -569,7 +577,7 @@
 		};
 		8D23F882186DD66700A7E996 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1A6944940984437B4F0FCE8 /* Pods-MioDashboardTests.xcconfig */;
+			baseConfigurationReference = D3EA64BB45D59695A4F00A1B /* Pods-MioDashboardTests.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MioDashboard.app/MioDashboard";
@@ -593,7 +601,7 @@
 		};
 		8D23F883186DD66700A7E996 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1A6944940984437B4F0FCE8 /* Pods-MioDashboardTests.xcconfig */;
+			baseConfigurationReference = 5DCBE9A36163B186D4BF2B2E /* Pods-MioDashboardTests.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MioDashboard.app/MioDashboard";
