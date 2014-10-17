@@ -16,22 +16,22 @@
 
 @interface MIOCouponResponse : MTLModel<MTLJSONSerializing>
 @property NSString* returnCode;
-@property NSArray* couponInfo;
+@property NSArray* couponInfo;  // MIOCouponInfo
 @end
 
 
 
 @interface MIOPacketResponse : MTLModel<MTLJSONSerializing>
 @property NSString* returnCode;
-@property NSArray* packetLogInfo;
+@property NSArray* packetLogInfo; // MIOPacketLogInfo
 @end
 
 
 
 @interface MIOCouponInfo : MTLModel<MTLJSONSerializing>
 @property NSString* hddServiceCode;
-@property NSArray* hdoInfo;
-@property NSArray* coupon;
+@property NSArray* hdoInfo; // MIOCouponHdoInfo
+@property NSArray* coupon;  // MIOCoupon
 @end
 
 
@@ -56,13 +56,13 @@
 
 @interface MIOPacketLogInfo : MTLModel<MTLJSONSerializing>
 @property NSString* hddServiceCode;
-@property NSArray* hdoInfo;
+@property NSArray* hdoInfo; // MIOPacketHdoInfo
 @end
 
 
 @interface MIOPacketHdoInfo : MTLModel<MTLJSONSerializing>
 @property NSString* hdoServiceCode;
-@property NSArray* packetLog;
+@property NSArray* packetLog; // MIOPacketLog
 @end
 
 

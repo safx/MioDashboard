@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class MIOCouponHdoInfo;
+@class RACSignal;
 
 @interface MIOServiceViewModel : NSObject
 @property NSArray* couponInfoArray;

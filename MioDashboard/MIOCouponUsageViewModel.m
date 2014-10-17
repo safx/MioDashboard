@@ -9,6 +9,7 @@
 #import "MIOCouponUsageViewModel.h"
 #import "MIOResponseModel.h"
 #import <iOSPlot/PCLineChartView.h>
+#import <Underscore.h>
 
 
 @implementation MIOCouponUsageViewModel

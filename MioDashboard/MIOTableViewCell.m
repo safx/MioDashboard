@@ -8,6 +8,7 @@
 
 #import "MIOTableViewCell.h"
 #import "MIOResponseModel.h"
+#import "MIOResponseModel+Util.h"
 #import "MIOServiceViewModel.h"
 
 
@@ -25,10 +26,7 @@
     self.smsLabel.hidden = !couponHdoInfo.sms;
     RAC(self.couponSwitch, on) = RACObserve(self.couponHdoInfo, couponUse);
     
-    int total = [Underscore.array(couponHdoInfo.packetLog).reduce(@0, ^id(NSNumber* v, MIOPacketLog* e) {
-        return @(v.intValue + e.withCoupon);
-    }) intValue];
- 
+    long long total = couponHdoInfo.totalPacketUsedWithCoupon;
     self.couponUsedLabel.text = [NSByteCountFormatter stringFromByteCount:total * 1000 * 1000 countStyle:NSByteCountFormatterCountStyleDecimal];
 }
 
@@ -42,10 +40,7 @@
 - (void)setModelWithCouponInfo:(MIOCouponInfo*)couponInfo {
     self.couponInfo = couponInfo;
     
-    long long total = [Underscore.array(couponInfo.coupon).reduce(@0, ^id(NSNumber* v, MIOCoupon* e) {
-        return @(v.intValue + e.volume);
-    }) intValue];
-
+    long long total = couponInfo.totalVolume;
     self.couponLabel.text = [NSByteCountFormatter stringFromByteCount:total * 1000 * 1000 countStyle:NSByteCountFormatterCountStyleDecimal];
 }
 @end

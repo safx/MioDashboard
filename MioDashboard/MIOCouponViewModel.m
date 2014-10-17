@@ -6,8 +6,11 @@
 //  Copyright (c) 2013年 Safx Developers. All rights reserved.
 //
 
+#import <Underscore.h>
 #import "MIOResponseModel.h"
 #import "MIOCouponViewModel.h"
+#import "MIOResponseModel+Util.h"
+
 
 @implementation MIOCouponViewModel
 
@@ -29,10 +32,7 @@
         }).unwrap;
 
         NSArray* usages = Underscore.array(couponInfo.hdoInfo).map(^id(MIOCouponHdoInfo* hdoInfo) {
-            int sum = [Underscore.array(hdoInfo.packetLog).reduce(@0, ^id(NSNumber* v, MIOPacketLog* e) {
-                return @(v.intValue + e.withCoupon);
-            }) intValue];
-            return @[@{@"label":hdoInfo.hdoServiceCode, @"type":@"used", @"volume":@(sum)}];
+            return @[@{@"label":hdoInfo.hdoServiceCode, @"type":@"used", @"volume":@(hdoInfo.totalPacketUsedWithCoupon)}];
         }).unwrap;
         
         self.slices = Underscore.array(@[usages, coupons]).flatten.unwrap;
