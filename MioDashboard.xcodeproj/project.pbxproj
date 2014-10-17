@@ -10,6 +10,10 @@
 		404476528D4E4B00A375CE11 /* libPods-MioDashboardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E2F7FADB6E4B4FBB24A6DB /* libPods-MioDashboardTests.a */; };
 		8D00C20F186EC48500CFEDAC /* MIOCouponUsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D00C20E186EC48500CFEDAC /* MIOCouponUsageViewController.m */; };
 		8D00C250187078F800CFEDAC /* MIOResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D00C24F187078F800CFEDAC /* MIOResponseModel.m */; };
+		8D0E13CF19EED5B400E01117 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0E13CE19EED5B400E01117 /* NotificationCenter.framework */; };
+		8D0E13D419EED5B400E01117 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0E13D319EED5B400E01117 /* TodayViewController.swift */; };
+		8D0E13D619EED5B400E01117 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0E13D519EED5B400E01117 /* MainInterface.storyboard */; };
+		8D0E13D919EED5B400E01117 /* MioExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8D0E13CD19EED5B400E01117 /* MioExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8D0E13EB19EED92F00E01117 /* libPods-MioDashboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0E13EA19EED92F00E01117 /* libPods-MioDashboard.a */; };
 		8D0E13EC19EEDBB000E01117 /* MIOResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D00C24F187078F800CFEDAC /* MIOResponseModel.m */; };
 		8D0E13EF19EFF1AD00E01117 /* MIORestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB7565186DDCC800A7EA42 /* MIORestHelper.m */; };
@@ -44,6 +48,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8D0E13D719EED5B400E01117 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D23F841186DD66600A7E996 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D0E13CC19EED5B400E01117;
+			remoteInfo = MioExtension;
+		};
+		8D0E13DA19EED5B400E01117 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D23F841186DD66600A7E996 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D0E13CC19EED5B400E01117;
+			remoteInfo = MioExtension;
+		};
 		8D23F872186DD66700A7E996 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8D23F841186DD66600A7E996 /* Project object */;
@@ -53,6 +71,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8D0E13DF19EED5B400E01117 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8D0E13D919EED5B400E01117 /* MioExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5DCBE9A36163B186D4BF2B2E /* Pods-MioDashboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioDashboardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MioDashboardTests/Pods-MioDashboardTests.release.xcconfig"; sourceTree = "<group>"; };
 		6860F425B4D8425623307355 /* Pods-MioDashboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioDashboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-MioDashboard/Pods-MioDashboard.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +92,13 @@
 		8D00C20E186EC48500CFEDAC /* MIOCouponUsageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOCouponUsageViewController.m; sourceTree = "<group>"; };
 		8D00C24E187078F800CFEDAC /* MIOResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIOResponseModel.h; sourceTree = "<group>"; };
 		8D00C24F187078F800CFEDAC /* MIOResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOResponseModel.m; sourceTree = "<group>"; };
+		8D0E13CD19EED5B400E01117 /* MioExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MioExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0E13CE19EED5B400E01117 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		8D0E13D219EED5B400E01117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D0E13D319EED5B400E01117 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		8D0E13D519EED5B400E01117 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		8D0E13E419EED60D00E01117 /* libPods-MioDashboard.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-MioDashboard.a"; path = "Pods/build/Debug-iphoneos/libPods-MioDashboard.a"; sourceTree = "<group>"; };
+		8D0E13E619EED6C900E01117 /* MioDashboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MioDashboard-Bridging-Header.h"; path = "../MioDashboard/MioDashboard-Bridging-Header.h"; sourceTree = "<group>"; };
 		8D0E13E719EED8F400E01117 /* libPods-MioDashboard.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-MioDashboard.a"; path = "Pods/build/Debug-iphoneos/libPods-MioDashboard.a"; sourceTree = "<group>"; };
 		8D0E13EA19EED92F00E01117 /* libPods-MioDashboard.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-MioDashboard.a"; path = "Pods/build/Debug-iphoneos/libPods-MioDashboard.a"; sourceTree = "<group>"; };
 		8D0E13F019EFF1E900E01117 /* MIORestHelper+Authorize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MIORestHelper+Authorize.h"; sourceTree = "<group>"; };
@@ -110,6 +149,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8D0E13CA19EED5B400E01117 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D0E13EB19EED92F00E01117 /* libPods-MioDashboard.a in Frameworks */,
+				8D0E13CF19EED5B400E01117 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D23F846186DD66600A7E996 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,12 +183,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D0E13D019EED5B400E01117 /* MioExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8D0E13F319F0188F00E01117 /* MioExtension.entitlements */,
+				8D0E13E619EED6C900E01117 /* MioDashboard-Bridging-Header.h */,
+				8D0E13D319EED5B400E01117 /* TodayViewController.swift */,
+				8D0E13D519EED5B400E01117 /* MainInterface.storyboard */,
+				8D0E13D119EED5B400E01117 /* Supporting Files */,
+			);
+			path = MioExtension;
+			sourceTree = "<group>";
+		};
+		8D0E13D119EED5B400E01117 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8D0E13D219EED5B400E01117 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		8D23F840186DD66600A7E996 = {
 			isa = PBXGroup;
 			children = (
 				8D94DC2F187082DE0066EF5E /* libobjc */,
 				8D23F852186DD66600A7E996 /* MioDashboard */,
 				8D23F874186DD66700A7E996 /* MioDashboardTests */,
+				8D0E13D019EED5B400E01117 /* MioExtension */,
 				8D23F84B186DD66600A7E996 /* Frameworks */,
 				8D23F84A186DD66600A7E996 /* Products */,
 				C0E915F0040F2489CD43354E /* Pods */,
@@ -152,6 +221,7 @@
 			children = (
 				8D23F849186DD66600A7E996 /* MioDashboard.app */,
 				8D23F86D186DD66700A7E996 /* MioDashboardTests.xctest */,
+				8D0E13CD19EED5B400E01117 /* MioExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,6 +238,7 @@
 				8D23F86E186DD66700A7E996 /* XCTest.framework */,
 				C4D868CA4E454CE6B96F96F5 /* libPods-MioDashboard.a */,
 				E7E2F7FADB6E4B4FBB24A6DB /* libPods-MioDashboardTests.a */,
+				8D0E13CE19EED5B400E01117 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -175,6 +246,7 @@
 		8D23F852186DD66600A7E996 /* MioDashboard */ = {
 			isa = PBXGroup;
 			children = (
+				8D0E13F419F018DA00E01117 /* MioDashboard.entitlements */,
 				8D23F85B186DD66600A7E996 /* MIOAppDelegate.h */,
 				8D23F85C186DD66600A7E996 /* MIOAppDelegate.m */,
 				8D00C24E187078F800CFEDAC /* MIOResponseModel.h */,
@@ -260,6 +332,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8D0E13CC19EED5B400E01117 /* MioExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D0E13DE19EED5B400E01117 /* Build configuration list for PBXNativeTarget "MioExtension" */;
+			buildPhases = (
+				8D0E13C919EED5B400E01117 /* Sources */,
+				8D0E13CA19EED5B400E01117 /* Frameworks */,
+				8D0E13CB19EED5B400E01117 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MioExtension;
+			productName = MioExtension;
+			productReference = 8D0E13CD19EED5B400E01117 /* MioExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		8D23F848186DD66600A7E996 /* MioDashboard */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D23F87E186DD66700A7E996 /* Build configuration list for PBXNativeTarget "MioDashboard" */;
@@ -269,10 +358,13 @@
 				8D23F846186DD66600A7E996 /* Frameworks */,
 				8D23F847186DD66600A7E996 /* Resources */,
 				2A4EB2DA16E54836B3D0207B /* Copy Pods Resources */,
+				8D0E13DF19EED5B400E01117 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8D0E13D819EED5B400E01117 /* PBXTargetDependency */,
+				8D0E13DB19EED5B400E01117 /* PBXTargetDependency */,
 			);
 			name = MioDashboard;
 			productName = MioDashboard;
@@ -309,6 +401,23 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Safx Developers";
 				TargetAttributes = {
+					8D0E13CC19EED5B400E01117 = {
+						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 745YB3A52T;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					8D23F848186DD66600A7E996 = {
+						DevelopmentTeam = 745YB3A52T;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					8D23F86C186DD66700A7E996 = {
 						TestTargetID = 8D23F848186DD66600A7E996;
 					};
@@ -329,11 +438,20 @@
 			targets = (
 				8D23F848186DD66600A7E996 /* MioDashboard */,
 				8D23F86C186DD66700A7E996 /* MioDashboardTests */,
+				8D0E13CC19EED5B400E01117 /* MioExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8D0E13CB19EED5B400E01117 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D0E13D619EED5B400E01117 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D23F847186DD66600A7E996 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,6 +540,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8D0E13C919EED5B400E01117 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D8E472C19F14A5100B6E385 /* MIOResponseModel+Util.m in Sources */,
+				8D0E13EC19EEDBB000E01117 /* MIOResponseModel.m in Sources */,
+				8D0E13EF19EFF1AD00E01117 /* MIORestHelper.m in Sources */,
+				8D0E13D419EED5B400E01117 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D23F845186DD66600A7E996 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,6 +582,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8D0E13D819EED5B400E01117 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D0E13CC19EED5B400E01117 /* MioExtension */;
+			targetProxy = 8D0E13D719EED5B400E01117 /* PBXContainerItemProxy */;
+		};
+		8D0E13DB19EED5B400E01117 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D0E13CC19EED5B400E01117 /* MioExtension */;
+			targetProxy = 8D0E13DA19EED5B400E01117 /* PBXContainerItemProxy */;
+		};
 		8D23F873186DD66700A7E996 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8D23F848186DD66600A7E996 /* MioDashboard */;
@@ -496,6 +635,63 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8D0E13DC19EED5B400E01117 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB216BAF7E95D8974151078B /* Pods-MioDashboard.debug.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = MioExtension/MioExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MioExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MioDashboard/MioDashboard-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8D0E13DD19EED5B400E01117 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6860F425B4D8425623307355 /* Pods-MioDashboard.release.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = MioExtension/MioExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MioExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MioDashboard/MioDashboard-Bridging-Header.h";
+			};
+			name = Release;
+		};
 		8D23F87C186DD66700A7E996 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -576,10 +772,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = MioDashboard/MioDashboard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MioDashboard/MioDashboard-Prefix.pch";
 				INFOPLIST_FILE = "MioDashboard/MioDashboard-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -590,10 +790,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = MioDashboard/MioDashboard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MioDashboard/MioDashboard-Prefix.pch";
 				INFOPLIST_FILE = "MioDashboard/MioDashboard-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -645,6 +849,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8D0E13DE19EED5B400E01117 /* Build configuration list for PBXNativeTarget "MioExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D0E13DC19EED5B400E01117 /* Debug */,
+				8D0E13DD19EED5B400E01117 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8D23F844186DD66600A7E996 /* Build configuration list for PBXProject "MioDashboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
