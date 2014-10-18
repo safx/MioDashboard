@@ -44,7 +44,7 @@
 @property BOOL sms;
 @property BOOL couponUse;
 //@property NSArray* coupon;
-@property NSArray* packetLog; // assgined from MIOPacketResponse
+@property NSArray* packetLog; // MIOPacketLog; assgined from MIOPacketResponse
 @end
 
 

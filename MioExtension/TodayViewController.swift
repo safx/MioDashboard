@@ -12,6 +12,7 @@ import NotificationCenter
 class TodayViewController: UIViewController, NCWidgetProviding {
         
     @IBOutlet weak var couponVolume: UILabel!
+    @IBOutlet weak var usedToday: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +36,30 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         helper.mergeInformationSignal(coupon).subscribeNext { (obj) -> Void in
             let couponInfo = obj as [MIOCouponInfo]
             if countElements(couponInfo) > 0 {
-                let total = couponInfo[0].totalVolume()
-                self.couponVolume.text = NSByteCountFormatter.stringFromByteCount(1000 * 1000 * Int64(total), countStyle: .Decimal)
+                let ci = couponInfo[0]
+
+                self.couponVolume.text = NSByteCountFormatter.stringFromByteCount(1000 * 1000 * Int64(ci.totalVolume()), countStyle: .Decimal)
+
+                var formatter = NSDateFormatter()
+                formatter.dateFormat = "yyyyMMdd"
+                let today = formatter.stringFromDate(NSDate())
+                
+                let todayUsed = ci.hdoInfo.reduce(0, combine: { (acc, elem) -> UInt in
+                    let hdoInfo = elem as MIOCouponHdoInfo
+                    let used = hdoInfo.packetLog.reduce(0, combine: { (a, e) -> UInt in
+                        let p = e as MIOPacketLog
+                        return a + (p.date == today ? p.withCoupon : 0)
+                    })
+                    return acc + used
+                })
+                if todayUsed > 0 {
+                    let repl = NSByteCountFormatter.stringFromByteCount(1000 * 1000 * Int64(todayUsed), countStyle: .Decimal)
+                    self.usedToday.text = "−\(repl)"
+                } else {
+                    self.usedToday.textColor = UIColor.lightTextColor()
+                    self.usedToday.text = "±0"
+                }
+                
                 completionHandler(NCUpdateResult.NewData)
                 return
             }
