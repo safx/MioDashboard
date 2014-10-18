@@ -30,6 +30,7 @@
 
 @interface MIOCouponInfo : MTLModel<MTLJSONSerializing>
 @property NSString* hddServiceCode;
+@property NSString* plan;
 @property NSArray* hdoInfo; // MIOCouponHdoInfo
 @property NSArray* coupon;  // MIOCoupon
 @end
@@ -43,7 +44,7 @@
 @property BOOL sms;
 @property BOOL couponUse;
 //@property NSArray* coupon;
-@property NSArray* packetLog; // assgin from MIOPacketResponse
+@property NSArray* packetLog; // assgined from MIOPacketResponse
 @end
 
 
@@ -56,6 +57,7 @@
 
 @interface MIOPacketLogInfo : MTLModel<MTLJSONSerializing>
 @property NSString* hddServiceCode;
+@property NSString* plan;
 @property NSArray* hdoInfo; // MIOPacketHdoInfo
 @end
 

@@ -68,7 +68,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     MIOCouponInfo* info = self.viewModel.couponInfoArray[section];
-    return info.hddServiceCode;
+    return [NSString stringWithFormat:@"%@ (%@)", info.hddServiceCode, info.plan];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
