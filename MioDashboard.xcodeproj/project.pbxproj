@@ -35,9 +35,6 @@
 		8D23F87B186DD66700A7E996 /* MioDashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D23F87A186DD66700A7E996 /* MioDashboardTests.m */; };
 		8D8E472B19F149DA00B6E385 /* MIOResponseModel+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E472A19F149DA00B6E385 /* MIOResponseModel+Util.m */; };
 		8D8E472C19F14A5100B6E385 /* MIOResponseModel+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E472A19F149DA00B6E385 /* MIOResponseModel+Util.m */; };
-		8D94DC30187082DE0066EF5E /* EXTScope.h in Resources */ = {isa = PBXBuildFile; fileRef = 8D94DC2C187082DE0066EF5E /* EXTScope.h */; };
-		8D94DC31187082DE0066EF5E /* EXTScope.m in Resources */ = {isa = PBXBuildFile; fileRef = 8D94DC2D187082DE0066EF5E /* EXTScope.m */; };
-		8D94DC32187082DE0066EF5E /* metamacros.h in Resources */ = {isa = PBXBuildFile; fileRef = 8D94DC2E187082DE0066EF5E /* metamacros.h */; };
 		8DCC68C5187188FE004BD5FB /* MIOServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC68C4187188FE004BD5FB /* MIOServiceViewController.m */; };
 		8DCC68C818718ACE004BD5FB /* MIOServiceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC68C718718ACE004BD5FB /* MIOServiceViewModel.m */; };
 		8DCC68CB18719B01004BD5FB /* MIOTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC68CA18719B01004BD5FB /* MIOTableViewCell.m */; };
@@ -127,9 +124,6 @@
 		8D23F87A186DD66700A7E996 /* MioDashboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MioDashboardTests.m; sourceTree = "<group>"; };
 		8D8E472919F149DA00B6E385 /* MIOResponseModel+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MIOResponseModel+Util.h"; sourceTree = "<group>"; };
 		8D8E472A19F149DA00B6E385 /* MIOResponseModel+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MIOResponseModel+Util.m"; sourceTree = "<group>"; };
-		8D94DC2C187082DE0066EF5E /* EXTScope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
-		8D94DC2D187082DE0066EF5E /* EXTScope.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
-		8D94DC2E187082DE0066EF5E /* metamacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
 		8DCC68C3187188FE004BD5FB /* MIOServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIOServiceViewController.h; sourceTree = "<group>"; };
 		8DCC68C4187188FE004BD5FB /* MIOServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOServiceViewController.m; sourceTree = "<group>"; };
 		8DCC68C618718ACE004BD5FB /* MIOServiceViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIOServiceViewModel.h; sourceTree = "<group>"; };
@@ -206,7 +200,6 @@
 		8D23F840186DD66600A7E996 = {
 			isa = PBXGroup;
 			children = (
-				8D94DC2F187082DE0066EF5E /* libobjc */,
 				8D23F852186DD66600A7E996 /* MioDashboard */,
 				8D23F874186DD66700A7E996 /* MioDashboardTests */,
 				8D0E13D019EED5B400E01117 /* MioExtension */,
@@ -306,16 +299,6 @@
 				8D23F877186DD66700A7E996 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8D94DC2F187082DE0066EF5E /* libobjc */ = {
-			isa = PBXGroup;
-			children = (
-				8D94DC2C187082DE0066EF5E /* EXTScope.h */,
-				8D94DC2D187082DE0066EF5E /* EXTScope.m */,
-				8D94DC2E187082DE0066EF5E /* metamacros.h */,
-			);
-			path = libobjc;
 			sourceTree = "<group>";
 		};
 		C0E915F0040F2489CD43354E /* Pods */ = {
@@ -456,9 +439,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D94DC31187082DE0066EF5E /* EXTScope.m in Resources */,
-				8D94DC30187082DE0066EF5E /* EXTScope.h in Resources */,
-				8D94DC32187082DE0066EF5E /* metamacros.h in Resources */,
 				8D23F863186DD66600A7E996 /* Main_iPad.storyboard in Resources */,
 				8D23F868186DD66700A7E996 /* Images.xcassets in Resources */,
 				8D23F860186DD66600A7E996 /* Main_iPhone.storyboard in Resources */,
