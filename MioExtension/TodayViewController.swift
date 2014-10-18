@@ -31,26 +31,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If there's an update, use NCUpdateResult.NewData
         let helper = MIORestHelper.loadAccessToken()
 
-        let coupon = RACSignal.defer { helper.getCoupon() }
-        coupon.subscribeNext { (obj) -> Void in
-            var error : NSError? = nil
-            let response = MTLJSONAdapter.modelOfClass(MIOCouponResponse.self, fromJSONDictionary: obj.first as NSDictionary, error: &error) as MIOCouponResponse?
-            //println("\(response) \(error)")
-            
-            if response == nil {
-                completionHandler(NCUpdateResult.Failed)
-                self.couponVolume.text = "Error"
-                self.couponVolume.textColor = UIColor(red: 234.0/255, green: 99.0/255, blue: 69.0/255, alpha: 1)
+        let coupon = RACSignal.defer { helper.loadInformationSignal() }
+        helper.mergeInformationSignal(coupon).subscribeNext { (obj) -> Void in
+            let couponInfo = obj as [MIOCouponInfo]
+            if countElements(couponInfo) > 0 {
+                let total = couponInfo[0].totalVolume()
+                self.couponVolume.text = NSByteCountFormatter.stringFromByteCount(1000 * 1000 * Int64(total), countStyle: .Decimal)
+                completionHandler(NCUpdateResult.NewData)
                 return
-            }
-            
-            if let couponInfo = response!.couponInfo as? [MIOCouponInfo] {
-                if countElements(couponInfo) > 0 {
-                    let total = couponInfo[0].totalVolume()
-                    self.couponVolume.text = NSByteCountFormatter.stringFromByteCount(1000 * 1000 * Int64(total), countStyle: .Decimal)
-                    completionHandler(NCUpdateResult.NewData)
-                    return
-                }
             }
             self.couponVolume.text = "No data"
             self.couponVolume.textColor = UIColor.darkTextColor()
