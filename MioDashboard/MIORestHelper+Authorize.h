@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MIORestHelper.h"
 
-@interface MIORestHelper (Authorize)
+@interface MIORestHelper (WebAuthorize)
 
 - (RACSignal*)authorize;
 - (RACSignal*)authorizeInView:(UIView*)view;

@@ -21,53 +21,72 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-        // Perform any setup necessary in order to update the view.
-
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        let helper = MIORestHelper.loadAccessToken()
-
-        let coupon = RACSignal.defer { helper.loadInformationSignal() }
-        helper.mergeInformationSignal(coupon).subscribeNext { (obj) -> Void in
-            let couponInfo = obj as [MIOCouponInfo]
-            if countElements(couponInfo) > 0 {
-                let ci = couponInfo[0]
-
-                self.couponVolume.text = NSByteCountFormatter.stringFromByteCount(1000 * 1000 * Int64(ci.totalVolume()), countStyle: .Decimal)
-
-                var formatter = NSDateFormatter()
-                formatter.dateFormat = "yyyyMMdd"
-                let today = formatter.stringFromDate(NSDate())
-                
-                let todayUsed = ci.hdoInfo.reduce(0, combine: { (acc, elem) -> UInt in
-                    let hdoInfo = elem as MIOCouponHdoInfo
-                    let used = hdoInfo.packetLog.reduce(0, combine: { (a, e) -> UInt in
-                        let p = e as MIOPacketLog
-                        return a + (p.date == today ? p.withCoupon : 0)
-                    })
-                    return acc + used
-                })
-                if todayUsed > 0 {
-                    let repl = NSByteCountFormatter.stringFromByteCount(1000 * 1000 * Int64(todayUsed), countStyle: .Decimal)
-                    self.usedToday.text = "−\(repl)"
-                } else {
-                    self.usedToday.textColor = UIColor.lightTextColor()
-                    self.usedToday.text = "±0"
-                }
-                
-                completionHandler(NCUpdateResult.NewData)
-                return
-            }
-            self.couponVolume.text = "No data"
-            self.couponVolume.textColor = UIColor.darkTextColor()
-            completionHandler(NCUpdateResult.NoData)
+        func format(megabytes: Int32) -> String {
+            return NSByteCountFormatter.stringFromByteCount(1000 * 1000 * Int64(megabytes), countStyle: .Decimal)
         }
-
+        
+        let helper = MIORestHelper.loadAccessToken()
+        let coupon = RACSignal.defer { helper.loadInformationSignal() }
+                              .catch { (error) -> RACSignal! in
+                                if let data = error.localizedRecoverySuggestion?.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true) {
+                                    var err: NSError? = nil
+                                    let dic = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &err) as [String:AnyObject]?
+                                    if err == nil {
+                                        if let ret = dic!["returnCode"] as? String {
+                                            if ret == "User Authorization Failure" {
+                                                if helper.accessToken != nil {
+                                                    helper.accessToken = nil;
+                                                    return helper.refreshToken().catch { (e) -> RACSignal! in
+                                                        return RACSignal.empty()
+                                                    }.concat(helper.loadInformationSignal())
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                return RACSignal.empty()
+                              }
+        let merged = helper.mergeInformationSignal(coupon)
+        
+        merged.timeout(10, onScheduler: RACScheduler.currentScheduler())
+            .subscribeNext({ (obj) -> Void in
+                let couponInfo = obj as [MIOCouponInfo]
+                if countElements(couponInfo) > 0 {
+                    let ci = couponInfo[0]
+                    
+                    self.couponVolume.text = format(ci.totalVolume())
+                    
+                    var formatter = NSDateFormatter()
+                    formatter.dateFormat = "yyyyMMdd"
+                    let today = formatter.stringFromDate(NSDate())
+                    
+                    let todayUsed = ci.hdoInfo.reduce(0, combine: { (acc, elem) -> UInt in
+                        let hdoInfo = elem as MIOCouponHdoInfo
+                        let used = hdoInfo.packetLog.reduce(0, combine: { (a, e) -> UInt in
+                            let p = e as MIOPacketLog
+                            return a + (p.date == today ? p.withCoupon : 0)
+                        })
+                        return acc + used
+                    })
+                    if todayUsed > 0 {
+                        let repl = format(Int32(todayUsed))
+                        self.usedToday.text = "−\(repl)"
+                    } else {
+                        self.usedToday.textColor = UIColor.lightTextColor()
+                        self.usedToday.text = "±0"
+                    }
+                    
+                    completionHandler(.NewData)
+                    return
+                }
+                self.couponVolume.text = "No data"
+                self.couponVolume.textColor = UIColor.darkTextColor()
+                completionHandler(.NoData)
+            }, error: { (error) -> Void in
+                completionHandler(.Failed)
+            })
     }
-    
 }

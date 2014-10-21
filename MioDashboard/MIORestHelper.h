@@ -33,3 +33,10 @@
 - (RACSignal*)putCoupon:(BOOL)useCoupon forHdoServiceCode:(NSString*)hdoServiceCode;
 
 @end
+
+
+@interface MIORestHelper (Authorize)
+- (RACSignal*)refreshToken;
+- (BOOL)checkAccessToken:(NSURL*)url;
+- (NSURLRequest*)authorizeRequest;
+@end

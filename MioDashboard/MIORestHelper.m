@@ -137,3 +137,39 @@
 }
 
 @end
+
+
+@implementation MIORestHelper (Authorize)
+
+- (BOOL)checkAccessToken:(NSURL*)url {
+    NSDictionary* params = Underscore.array([url.fragment componentsSeparatedByString:@"&"]).reduce(@{}, ^(NSDictionary* a, NSString* str) {
+        NSArray* kv = [str componentsSeparatedByString:@"="];
+        return Underscore.extend(a, @{ kv[0]:kv[1] });
+    });
+    NSString* state = [self.state stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];
+    if ([state isEqualToString:params[@"state"]]) {
+        self.accessToken = params[@"access_token"];
+        [MIORestHelper saveAccessToken:self];
+        return TRUE;
+    }
+    return FALSE;
+}
+
+- (NSURLRequest*)authorizeRequest {
+    NSAssert(self.clientID && self.redirectURI && self.state, @"should be non-nil.");
+    NSDictionary* dic = @{@"response_type":@"token", @"client_id":self.clientID, @"redirect_uri":self.redirectURI, @"state":self.state};
+    NSURLComponents* comp = [NSURLComponents componentsWithString:@"https://api.iijmio.jp/mobile/d/v1/authorization/"];
+    comp.query = [Underscore.dict(dic).map(^id(id key, id obj) {
+        return [NSString stringWithFormat:@"%@=%@", key, obj];
+    }).values.unwrap componentsJoinedByString:@"&"];
+    
+    return [[NSURLRequest alloc] initWithURL:comp.URL];
+}
+
+- (RACSignal*)refreshToken {
+    NSURLRequest* request = [self authorizeRequest];
+    return [AFJSONRequestOperation rac_startJSONRequestOperationWithRequest:request];
+}
+
+@end
+
