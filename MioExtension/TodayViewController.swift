@@ -16,7 +16,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,29 +28,30 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
         
         let helper = MIORestHelper.loadAccessToken()
-        let coupon = RACSignal.defer { helper.loadInformationSignal() }
-                              .catch { (error) -> RACSignal! in
-                                if let data = error.localizedRecoverySuggestion?.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true) {
-                                    var err: NSError? = nil
-                                    let dic = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &err) as [String:AnyObject]?
-                                    if err == nil {
-                                        if let ret = dic!["returnCode"] as? String {
-                                            if ret == "User Authorization Failure" {
-                                                if helper.accessToken != nil {
-                                                    helper.accessToken = nil;
-                                                    return helper.refreshToken().catch { (e) -> RACSignal! in
-                                                        return RACSignal.empty()
-                                                    }.concat(helper.loadInformationSignal())
-                                                }
-                                            }
-                                        }
-                                    }
+        let coupon = RACSignal
+            .defer { helper.loadInformationSignal() }
+            .catch { (error) -> RACSignal! in
+                if let data = error.localizedRecoverySuggestion?.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true) {
+                    var err: NSError? = nil
+                    let dic = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &err) as [String:AnyObject]?
+                    if err == nil {
+                        if let ret = dic!["returnCode"] as? String {
+                            if ret == "User Authorization Failure" {
+                                if helper.accessToken != nil {
+                                    helper.accessToken = nil;
+                                    return helper.refreshToken().catch { (e) -> RACSignal! in
+                                        return RACSignal.empty()
+                                        }.concat(helper.loadInformationSignal())
                                 }
-                                return RACSignal.empty()
-                              }
-        let merged = helper.mergeInformationSignal(coupon)
-        
-        merged.timeout(10, onScheduler: RACScheduler.currentScheduler())
+                            }
+                        }
+                    }
+                }
+                return RACSignal.empty()
+        }
+
+        helper.mergeInformationSignal(coupon)
+            .timeout(10, onScheduler: RACScheduler.currentScheduler())
             .subscribeNext({ (obj) -> Void in
                 let couponInfo = obj as [MIOCouponInfo]
                 if countElements(couponInfo) > 0 {
