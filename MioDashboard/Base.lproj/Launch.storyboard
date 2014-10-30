@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JB0-Tc-kOd">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--IIJmio Dashboard-->
+        <scene sceneID="PCT-Ey-tIl">
+            <objects>
+                <viewController title="IIJmio Dashboard" id="JB0-Tc-kOd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vZZ-vK-F6V"/>
+                        <viewControllerLayoutGuide type="bottom" id="2p9-rW-lX2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fmL-S4-hMH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liB-81-oPy">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="SJg-mQ-bnZ"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="IIJmio Dashboard" id="9dH-Hs-eRM"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="liB-81-oPy" firstAttribute="top" secondItem="fmL-S4-hMH" secondAttribute="top" id="amE-tk-REL"/>
+                            <constraint firstItem="liB-81-oPy" firstAttribute="leading" secondItem="fmL-S4-hMH" secondAttribute="leading" id="ivN-vi-MQ3"/>
+                            <constraint firstAttribute="trailing" secondItem="liB-81-oPy" secondAttribute="trailing" id="kmT-U5-aOi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ogd-mK-EWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="535" y="581"/>
+        </scene>
+    </scenes>
+</document>

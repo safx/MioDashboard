@@ -24,8 +24,7 @@
 		8D23F857186DD66600A7E996 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D23F855186DD66600A7E996 /* InfoPlist.strings */; };
 		8D23F859186DD66600A7E996 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D23F858186DD66600A7E996 /* main.m */; };
 		8D23F85D186DD66600A7E996 /* MIOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D23F85C186DD66600A7E996 /* MIOAppDelegate.m */; };
-		8D23F860186DD66600A7E996 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D23F85E186DD66600A7E996 /* Main_iPhone.storyboard */; };
-		8D23F863186DD66600A7E996 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D23F861186DD66600A7E996 /* Main_iPad.storyboard */; };
+		8D23F860186DD66600A7E996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D23F85E186DD66600A7E996 /* Main.storyboard */; };
 		8D23F866186DD66700A7E996 /* MIOCouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D23F865186DD66700A7E996 /* MIOCouponViewController.m */; };
 		8D23F868186DD66700A7E996 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D23F867186DD66700A7E996 /* Images.xcassets */; };
 		8D23F86F186DD66700A7E996 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D23F86E186DD66700A7E996 /* XCTest.framework */; };
@@ -40,6 +39,7 @@
 		8DCC68CB18719B01004BD5FB /* MIOTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC68CA18719B01004BD5FB /* MIOTableViewCell.m */; };
 		8DCC68CE1871B1DD004BD5FB /* MIOCouponViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC68CD1871B1DD004BD5FB /* MIOCouponViewModel.m */; };
 		8DCC68D11871CACE004BD5FB /* MIOCouponUsageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC68D01871CACE004BD5FB /* MIOCouponUsageViewModel.m */; };
+		8DDA125E1A026AA700E009EE /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DDA125C1A026AA700E009EE /* Launch.storyboard */; };
 		8DEB7566186DDCC800A7EA42 /* MIORestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB7565186DDCC800A7EA42 /* MIORestHelper.m */; };
 		E395BAD657B448E7A4BE002B /* libPods-MioDashboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D868CA4E454CE6B96F96F5 /* libPods-MioDashboard.a */; };
 /* End PBXBuildFile section */
@@ -112,8 +112,7 @@
 		8D23F85A186DD66600A7E996 /* MioDashboard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MioDashboard-Prefix.pch"; sourceTree = "<group>"; };
 		8D23F85B186DD66600A7E996 /* MIOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIOAppDelegate.h; sourceTree = "<group>"; };
 		8D23F85C186DD66600A7E996 /* MIOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIOAppDelegate.m; sourceTree = "<group>"; };
-		8D23F85F186DD66600A7E996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		8D23F862186DD66600A7E996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		8D23F85F186DD66600A7E996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D23F864186DD66600A7E996 /* MIOCouponViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIOCouponViewController.h; sourceTree = "<group>"; };
 		8D23F865186DD66700A7E996 /* MIOCouponViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIOCouponViewController.m; sourceTree = "<group>"; };
 		8D23F867186DD66700A7E996 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -134,6 +133,7 @@
 		8DCC68CD1871B1DD004BD5FB /* MIOCouponViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOCouponViewModel.m; sourceTree = "<group>"; };
 		8DCC68CF1871CACE004BD5FB /* MIOCouponUsageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIOCouponUsageViewModel.h; sourceTree = "<group>"; };
 		8DCC68D01871CACE004BD5FB /* MIOCouponUsageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIOCouponUsageViewModel.m; sourceTree = "<group>"; };
+		8DDA125D1A026AA700E009EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MioDashboard/Base.lproj/Launch.storyboard; sourceTree = "<group>"; };
 		8DEB7564186DDCC800A7EA42 /* MIORestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIORestHelper.h; sourceTree = "<group>"; };
 		8DEB7565186DDCC800A7EA42 /* MIORestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIORestHelper.m; sourceTree = "<group>"; };
 		BB216BAF7E95D8974151078B /* Pods-MioDashboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioDashboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MioDashboard/Pods-MioDashboard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -273,8 +273,8 @@
 		8D23F853186DD66600A7E996 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8D23F861186DD66600A7E996 /* Main_iPad.storyboard */,
-				8D23F85E186DD66600A7E996 /* Main_iPhone.storyboard */,
+				8D23F85E186DD66600A7E996 /* Main.storyboard */,
+				8DDA125C1A026AA700E009EE /* Launch.storyboard */,
 				8D23F854186DD66600A7E996 /* MioDashboard-Info.plist */,
 				8D23F855186DD66600A7E996 /* InfoPlist.strings */,
 				8D23F858186DD66600A7E996 /* main.m */,
@@ -439,10 +439,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D23F863186DD66600A7E996 /* Main_iPad.storyboard in Resources */,
 				8D23F868186DD66700A7E996 /* Images.xcassets in Resources */,
-				8D23F860186DD66600A7E996 /* Main_iPhone.storyboard in Resources */,
+				8D23F860186DD66600A7E996 /* Main.storyboard in Resources */,
 				8D23F857186DD66600A7E996 /* InfoPlist.strings in Resources */,
+				8DDA125E1A026AA700E009EE /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,20 +588,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		8D23F85E186DD66600A7E996 /* Main_iPhone.storyboard */ = {
+		8D23F85E186DD66600A7E996 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8D23F85F186DD66600A7E996 /* Base */,
 			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		8D23F861186DD66600A7E996 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8D23F862186DD66600A7E996 /* Base */,
-			);
-			name = Main_iPad.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		8D23F877186DD66700A7E996 /* InfoPlist.strings */ = {
@@ -610,6 +602,15 @@
 				8D23F878186DD66700A7E996 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8DDA125C1A026AA700E009EE /* Launch.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DDA125D1A026AA700E009EE /* Base */,
+			);
+			name = Launch.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -751,7 +752,6 @@
 			baseConfigurationReference = BB216BAF7E95D8974151078B /* Pods-MioDashboard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = MioDashboard/MioDashboard.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -769,7 +769,6 @@
 			baseConfigurationReference = 6860F425B4D8425623307355 /* Pods-MioDashboard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = MioDashboard/MioDashboard.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
