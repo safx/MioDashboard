@@ -23,7 +23,7 @@
 
     self.iccIdCodeLabel.text = couponHdoInfo.iccid;
     self.regulationLabel.hidden = !couponHdoInfo.regulation;
-    self.smsLabel.hidden = !couponHdoInfo.sms;
+    self.smsLabel.text = couponHdoInfo.voice ? @"voice" : (couponHdoInfo.sms ? @"SMS" : @"");
     RAC(self.couponSwitch, on) = RACObserve(self.couponHdoInfo, couponUse);
     
     long long total = couponHdoInfo.totalPacketUsedWithCoupon;

@@ -42,6 +42,7 @@
 @property NSString* iccid;
 @property BOOL regulation;
 @property BOOL sms;
+@property BOOL voice;
 @property BOOL couponUse;
 //@property NSArray* coupon;
 @property NSArray* packetLog; // MIOPacketLog; assgined from MIOPacketResponse
