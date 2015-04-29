@@ -31,8 +31,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let loadSignal = RACSignal.defer { helper.loadInformationSignal() }
         helper.mergeInformationSignal(loadSignal)
             .subscribeNext({ (obj) -> Void in
-                let couponInfo = obj as [MIOCouponInfo]
-                if countElements(couponInfo) > 0 {
+                let couponInfo = obj as! [MIOCouponInfo]
+                if count(couponInfo) > 0 {
                     let ci = couponInfo[0]
                     
                     self.couponVolume.text = format(ci.totalVolume())
@@ -42,9 +42,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     let today = formatter.stringFromDate(NSDate())
                     
                     let todayUsed = ci.hdoInfo.reduce(0, combine: { (acc, elem) -> UInt in
-                        let hdoInfo = elem as MIOCouponHdoInfo
+                        let hdoInfo = elem as! MIOCouponHdoInfo
                         let used = hdoInfo.packetLog.reduce(0, combine: { (a, e) -> UInt in
-                            let p = e as MIOPacketLog
+                            let p = e as! MIOPacketLog
                             return a + (p.date == today ? p.withCoupon : 0)
                         })
                         return acc + used
